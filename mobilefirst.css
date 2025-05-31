@@ -1,347 +1,190 @@
 /* 
- * Mobile First CSS - Baseado no style.css original
- * Este arquivo implementa uma abordagem mobile-first para responsividade */
-
-/* ===== RESET E CONFIGURAÇÕES BÁSICAS ===== */
-/* Reset global para remover estilos padrão do navegador */
-* {
-    margin: 0;          /* Remove margens padrão */
-    padding: 0;         /* Remove paddings padrão */
-    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
-    font-family: 'Poppins', sans-serif; /* Define fonte padrão */
-    text-decoration: none; /* Remove sublinhado de links */
-    list-style: none;   /* Remove marcadores de listas */
-}
-
-/* Variáveis CSS para cores e valores reutilizáveis */
-:root {
-    --bg-color: #e0f7fa;    /* Cor de fundo principal */
-    --text-color: #e3e9e9;  /* Cor de texto clara */
-    --main-color: #FF7043;  /* Cor principal (laranja) */
-    --other-color: #f7fcf9; /* Cor secundária */
-}
-
-/* Estilos base do corpo da página */
-body {
-    line-height: 1.6;      /* Altura da linha para melhor legibilidade */
-    background-color: var(--bg-color); /* Usa variável para cor de fundo */
-    color: #333;           /* Cor do texto principal */
-}
-
-/* ===== HEADER MOBILE FIRST ===== */
-/* Container principal do cabeçalho */
-header {
-    display: flex;         /* Usa flexbox para layout */
-    flex-direction: column; /* Organiza elementos em coluna para mobile */
-    align-items: center;   /* Centraliza horizontalmente */
-    padding: 15px;         /* Espaçamento interno */
-    background-color: rgb(248, 187, 208, 0.8); /* Fundo com transparência */
-    z-index: 1000;         /* Garante que fique sobre outros elementos */
-    border-bottom: 4px solid var(--main-color); /* Borda inferior */
-    gap: 15px;             /* Espaço entre elementos */
-    margin-bottom: 20px;   /* Espaço após o header */
-}
-
-/* Container do logo */
-.logo {
-    display: flex;         /* Usa flexbox */
-    align-items: center;   /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    font-size: 24px;       /* Tamanho da fonte para mobile */
-    font-weight: 700;      /* Peso da fonte */
-    color: #333;           /* Cor do texto */
-    gap: 8px;              /* Espaço entre logo e texto */
-}
-
-/* Imagem do logo */
-.logo img {
-    width: 40px;           /* Tamanho da imagem para mobile */
-    height: 40px;          /* Altura da imagem para mobile */
-    margin-right: 8px;     /* Espaço à direita da imagem */
-}
-
-/* Menu de navegação */
-.navegação {
-    display: flex;         /* Usa flexbox */
-    flex-direction: column; /* Organiza links em coluna para mobile */
-    align-items: center;   /* Centraliza horizontalmente */
-    gap: 10px;             /* Espaço entre links */
-    width: 100%;           /* Ocupa toda largura */
-}
-
-/* Links do menu */
-.navegação li a {
-    color: #333;           /* Cor do texto */
-    font-weight: 500;      /* Peso da fonte */
-    padding: 8px 15px;     /* Espaçamento interno */
-    border-radius: 5px;    /* Bordas arredondadas */
-    transition: all 0.3s ease; /* Transição suave */
-    font-size: 16px;       /* Tamanho da fonte para mobile */
-    display: block;        /* Ocupa toda largura */
-    text-align: center;    /* Centraliza texto */
-    width: 100%;           /* Ocupa toda largura */
-}
-
-/* Efeito hover nos links */
-.navegação li a:hover {
-    background-color: var(--main-color); /* Cor de fundo ao passar mouse */
-    transform: scale(1.05); /* Aumenta levemente */
-}
-
-/* Container dos botões sociais */
-.btn-social {
-    display: flex;         /* Usa flexbox */
-    gap: 12px;             /* Espaço entre botões */
-    justify-content: center; /* Centraliza horizontalmente */
-    width: 100%;           /* Ocupa toda largura */
-    margin-top: 10px;      /* Espaço acima */
-}
-
-/* Botões sociais */
-.btn-social button {
-    background: none;      /* Remove fundo */
-    border: none;          /* Remove borda */
-    cursor: pointer;       /* Cursor de mão */
-    font-size: 20px;       /* Tamanho do ícone */
-    transition: transform 0.2s ease; /* Transição suave */
-}
-
-/* Efeito hover nos botões sociais */
-.btn-social button:hover {
-    transform: scale(0.9); /* Diminui levemente */
-}
-
-/* ===== GRID DE PRODUTOS ===== */
-/* Container do grid de produtos */
-.products-grid {
-    display: grid;         /* Usa grid para layout */
-    grid-template-columns: 1fr; /* 1 coluna para mobile */
-    gap: 20px;             /* Espaço entre produtos */
-    padding: 20px;         /* Espaçamento interno */
-    max-width: 100%;       /* Largura máxima */
-    margin: 0 auto;        /* Centraliza horizontalmente */
-}
-
-/* Card individual do produto */
-.product {
-    background: white;     /* Fundo branco */
-    border-radius: 15px;   /* Bordas arredondadas */
-    padding: 15px;         /* Espaçamento interno */
-    text-align: center;    /* Centraliza conteúdo */
-    transition: transform 0.3s ease; /* Transição suave */
-    cursor: pointer;       /* Cursor de mão */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
-    position: relative;    /* Para posicionamento de elementos filhos */
-    min-height: 350px;     /* Altura mínima para mobile */
-}
-
-/* Efeito hover no produto */
-.product:hover {
-    transform: translateY(-5px); /* Levanta levemente */
-}
-
-/* Container das imagens do produto */
-.product-images {
-    width: 100%;           /* Ocupa toda largura */
-    aspect-ratio: 1/1;     /* Mantém proporção quadrada */
-    margin-bottom: 15px;   /* Espaço abaixo */
-    overflow: hidden;      /* Esconde overflow */
-    border-radius: 15px;   /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
-    position: relative;    /* Para posicionamento de elementos filhos */
-}
-
-/* Título do produto */
-.product h2 {
-    font-size: 1.1rem;     /* Tamanho da fonte */
-    margin: 10px 0;        /* Espaçamento vertical */
-    color: #333;           /* Cor do texto */
-}
-
-/* Descrição do produto */
-.product p {
-    color: #666;           /* Cor do texto */
-    font-size: 0.9rem;     /* Tamanho da fonte */
-    margin-bottom: 15px;   /* Espaço abaixo */
-    min-height: 40px;      /* Altura mínima para alinhamento */
-}
-
-/* Botão do WhatsApp */
-.whatsapp-btn {
-    background-color: #25D366; /* Cor do WhatsApp */
-    color: white;          /* Cor do texto */
-    border: none;          /* Remove borda */
-    padding: 10px 20px;    /* Espaçamento interno */
-    border-radius: 25px;   /* Bordas arredondadas */
-    font-size: 0.9rem;     /* Tamanho da fonte */
-    font-weight: 600;      /* Peso da fonte */
-    cursor: pointer;       /* Cursor de mão */
-    display: flex;         /* Usa flexbox */
-    align-items: center;   /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 8px;              /* Espaço entre ícone e texto */
-    margin-top: 10px;      /* Espaço acima */
-    transition: all 0.3s ease; /* Transição suave */
-    text-decoration: none; /* Remove sublinhado */
-    width: 100%;           /* Ocupa toda largura */
-}
-
-/* Efeito hover no botão do WhatsApp */
-.whatsapp-btn:hover {
-    background-color: #128C7E; /* Cor mais escura */
-    transform: translateY(-2px); /* Levanta levemente */
-    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3); /* Sombra suave */
-}
+ * Mobile First CSS - Apenas media queries
+ * Este arquivo contém apenas as media queries para responsividade
+ * Importe após o style.css
+ * 
+ * Observações importantes:
+ * - Este arquivo deve ser importado APÓS o style.css
+ * - Contém apenas ajustes responsivos, não duplica estilos base
+ * - Breakpoints: 768px (tablet), 1024px (desktop), 1440px (large desktop)
+ */
 
 /* ===== MEDIA QUERIES ===== */
 
-/* Breakpoint para Tablets (768px) */
+/* Breakpoint Tablet (768px) - Ajustes para tablets e dispositivos médios */
 @media screen and (min-width: 768px) {
-    /* Ajustes no header */
     header {
-        flex-direction: row; /* Organiza em linha */
-        justify-content: space-between; /* Espaça elementos */
-        padding: 20px 30px; /* Aumenta padding */
-        gap: 20px;         /* Aumenta espaço entre elementos */
+        flex-direction: row;          /* Muda layout para horizontal */
+        justify-content: space-between; /* Espaça elementos igualmente */
+        padding: 20px 30px;          /* Aumenta padding para melhor espaçamento */
+        gap: 20px;                   /* Espaço entre elementos do header */
     }
 
-    /* Ajustes no logo */
     .logo {
-        font-size: 28px;   /* Aumenta tamanho da fonte */
+        width: auto;                 /* Remove largura fixa do mobile */
+        font-size: 28px;            /* Aumenta tamanho da fonte */
     }
 
     .logo img {
-        width: 50px;       /* Aumenta tamanho da imagem */
-        height: 50px;      /* Altura da imagem para tablet */
+        width: 50px;                /* Aumenta tamanho da imagem */
+        height: 50px;               /* Mantém proporção quadrada */
     }
 
-    /* Ajustes na navegação */
     .navegação {
-        flex-direction: row; /* Organiza em linha */
-        justify-content: center; /* Centraliza horizontalmente */
-        width: auto;       /* Largura automática */
-        gap: 15px;         /* Aumenta espaço entre links */
+        flex-direction: row;         /* Muda navegação para horizontal */
+        width: auto;                /* Remove largura fixa do mobile */
+        gap: 15px;                  /* Espaço entre itens do menu */
     }
 
     .navegação li a {
-        font-size: 18px;   /* Aumenta tamanho da fonte */
-        width: auto;       /* Largura automática */
+        width: auto;                /* Remove largura fixa do mobile */
+        font-size: 18px;           /* Aumenta tamanho da fonte */
     }
 
-    /* Ajustes nos botões sociais */
     .btn-social {
-        width: auto;       /* Largura automática */
-        margin-top: 0;     /* Remove margem superior */
+        width: auto;                /* Remove largura fixa do mobile */
+        margin-top: 0;             /* Remove margem superior do mobile */
     }
 
-    /* Ajustes no grid de produtos */
+    .slider {
+        width: 80%;                /* Reduz largura para melhor visualização */
+        height: 400px;             /* Aumenta altura para tablets */
+    }
+
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-        gap: 25px;         /* Aumenta espaço entre produtos */
-        padding: 30px 5%;  /* Aumenta padding */
+        grid-template-columns: repeat(2, 1fr); /* Muda para 2 colunas */
+        padding: 30px 5%;          /* Aumenta padding lateral */
     }
 
     .product {
-        min-height: 400px; /* Aumenta altura mínima */
-        padding: 20px;     /* Aumenta padding */
+        min-height: 400px;         /* Aumenta altura mínima dos cards */
+    }
+
+    .quem-somos {
+        padding: 60px 40px;        /* Aumenta padding da seção */
+    }
+
+    .quem-somos-container {
+        max-width: 80%;            /* Limita largura do container */
+    }
+
+    .texto-grande {
+        font-size: 1.1rem;         /* Aumenta tamanho da fonte */
+    }
+
+    .metodos-pagamento {
+        padding: 60px 40px;        /* Aumenta padding da seção */
     }
 }
 
-/* Breakpoint para Desktops (1024px) */
+/* Breakpoint Desktop (1024px) - Ajustes para desktops e telas maiores */
 @media screen and (min-width: 1024px) {
-    /* Ajustes no header */
     header {
-        padding: 25px 60px; /* Aumenta padding */
-        gap: 30px;         /* Aumenta espaço entre elementos */
+        padding: 25px 60px;        /* Aumenta padding para telas maiores */
+        gap: 30px;                 /* Aumenta espaço entre elementos */
     }
 
-    /* Ajustes no logo */
     .logo {
-        font-size: 32px;   /* Aumenta tamanho da fonte */
+        font-size: 32px;           /* Aumenta tamanho da fonte */
     }
 
     .logo img {
-        width: 60px;       /* Aumenta tamanho da imagem */
-        height: 60px;
+        width: 60px;               /* Aumenta tamanho da imagem */
+        height: 60px;              /* Mantém proporção quadrada */
     }
 
-    /* Ajustes na navegação */
     .navegação li a {
-        font-size: 20px;   /* Aumenta tamanho da fonte */
-        padding: 10px 20px; /* Aumenta padding */
+        font-size: 20px;           /* Aumenta tamanho da fonte */
+        padding: 10px 20px;        /* Aumenta área clicável */
     }
 
-    /* Ajustes nos botões sociais */
     .btn-social button {
-        font-size: 24px;   /* Aumenta tamanho do ícone */
+        font-size: 24px;           /* Aumenta tamanho dos ícones */
     }
 
-    /* Ajustes no grid de produtos */
+    .slider {
+        width: 70%;                /* Reduz largura para telas maiores */
+        height: 500px;             /* Aumenta altura para desktop */
+    }
+
     .products-grid {
         grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas */
-        gap: 30px;         /* Aumenta espaço entre produtos */
-        padding: 40px 8%;  /* Aumenta padding */
-        max-width: 1400px; /* Define largura máxima */
+        padding: 40px 8%;          /* Aumenta padding lateral */
+        max-width: 1400px;         /* Limita largura máxima do grid */
     }
 
     .product {
-        min-height: 450px; /* Aumenta altura mínima */
-        padding: 25px;     /* Aumenta padding */
+        min-height: 450px;         /* Aumenta altura mínima dos cards */
     }
 
-    /* Ajustes nos textos dos produtos */
-    .product h2 {
-        font-size: 1.2rem; /* Aumenta tamanho da fonte */
+    .quem-somos {
+        padding: 80px 60px;        /* Aumenta padding da seção */
     }
 
-    .product p {
-        font-size: 1rem;   /* Aumenta tamanho da fonte */
+    .quem-somos-container {
+        max-width: 70%;            /* Reduz largura máxima do container */
     }
 
-    /* Ajustes no botão do WhatsApp */
-    .whatsapp-btn {
-        padding: 12px 25px; /* Aumenta padding */
-        font-size: 1rem;   /* Aumenta tamanho da fonte */
+    .texto-grande {
+        font-size: 1.2rem;         /* Aumenta tamanho da fonte */
+    }
+
+    .metodos-pagamento {
+        padding: 80px 60px;        /* Aumenta padding da seção */
     }
 }
 
-/* Breakpoint para Large Desktops (1440px) */
+/* Breakpoint Large Desktop (1440px) - Ajustes para telas muito grandes */
 @media screen and (min-width: 1440px) {
-    /* Ajustes no header */
     header {
-        padding: 30px 80px; /* Aumenta padding */
+        padding: 30px 80px;        /* Padding máximo para header */
     }
 
-    /* Ajustes no logo */
     .logo {
-        font-size: 36px;   /* Aumenta tamanho da fonte */
+        font-size: 36px;           /* Tamanho máximo da fonte */
     }
 
     .logo img {
-        width: 70px;       /* Aumenta tamanho da imagem */
-        height: 70px;
+        width: 70px;               /* Tamanho máximo da imagem */
+        height: 70px;              /* Mantém proporção quadrada */
     }
 
-    /* Ajustes na navegação */
     .navegação li a {
-        font-size: 22px;   /* Aumenta tamanho da fonte */
+        font-size: 22px;           /* Tamanho máximo da fonte */
     }
 
-    /* Ajustes nos botões sociais */
     .btn-social button {
-        font-size: 28px;   /* Aumenta tamanho do ícone */
+        font-size: 28px;           /* Tamanho máximo dos ícones */
     }
 
-    /* Ajustes no grid de produtos */
+    .slider {
+        width: 60%;                /* Largura mínima para telas grandes */
+        height: 600px;             /* Altura máxima do slider */
+    }
+
     .products-grid {
         grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas */
-        gap: 40px;         /* Aumenta espaço entre produtos */
-        padding: 50px 10%; /* Aumenta padding */
-        max-width: 1600px; /* Aumenta largura máxima */
+        padding: 50px 10%;         /* Padding máximo lateral */
+        max-width: 1600px;         /* Largura máxima do grid */
     }
 
     .product {
-        min-height: 500px; /* Aumenta altura mínima */
-        padding: 30px;     /* Aumenta padding */
+        min-height: 500px;         /* Altura máxima dos cards */
+    }
+
+    .quem-somos {
+        padding: 100px 80px;       /* Padding máximo da seção */
+    }
+
+    .quem-somos-container {
+        max-width: 60%;            /* Largura mínima do container */
+    }
+
+    .texto-grande {
+        font-size: 1.3rem;         /* Tamanho máximo da fonte */
+    }
+
+    .metodos-pagamento {
+        padding: 100px 80px;       /* Padding máximo da seção */
     }
 }
