@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentIndex);
     }
 
-    setInterval(autoSlide, 5000); // Troca a cada 5 segundos
+    if (slides.length > 0) {
+        showSlide(currentIndex); // Exibe o primeiro slide ao carregar
+        setInterval(autoSlide, 5000); // Troca a cada 5 segundos
+    }
 });
 
 function navigateProductImages(button, direction) {
