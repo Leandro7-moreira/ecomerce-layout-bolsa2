@@ -130,11 +130,13 @@ header {
     height: 100%; /* ocupa toda altura */
     opacity: 0; /* invisível por padrão */
     transition: opacity 0.5s ease-in-out; /* transição suave */
+    display: none; /* esconde todos os slides */
 }
 
 /* Slide ativo visível */
 .slide.active { 
     opacity: 1; /* visível */
+    display: block; /* mostra apenas o slide ativo */
 }
 
 /* Imagem do slide ocupa todo espaço */
