@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ateliê Aiello - Bolsas de crochê moderno feitas artesanalmente com estilo e elegância. Incentive o artesanato brasileiro.">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rodape.css">
+           
+    <title>AEIELLO ATELIÊ</title>
+   
+
+</head>
+
+<body>
+    
+    <header>
+        <a href="#" class="logo"><img src="../logo/logoquadrado.png" width="50" height="50"></i> Ateliê Aiello </a>
+        
+        <ul class="navegação">
+            <li><a href="#visao-geral">Visão Geral</a></li>
+            <li><a href="#quem-somos">Quem somos</a></li>
+        </ul>
+
+        <div class="btn-social">
+            <a href="https://www.instagram.com/lucimar.moreira01?igsh=Z2VrenJ5ZW5lbnBs" target="_blank" rel="external"><button><i class='bx bxl-instagram' ></i></button></a>
+            <a href="https://www.facebook.com/lucimar.moreira.146?mibextid=LQQJ4d" target="_blank" rel="external"><button><i class='bx bxl-facebook-circle'></i></button></a>
+            <a href="https://wa.me/message/7XS7DGTNCKBWG1" target="_blank" rel="external"><button><i class='bx bxl-whatsapp' ></i></button></a>         
+
+        </div>  
+
+        <!-- Divisor entre header e slider -->
+        <div class="divider"></div>
+
+        <!-- slide da home -->
+        <section class="slider" id="slider">
+            <img src="bolsaslider/Bolsa Bali.JPG" class="slide active" alt="" loading="lazy">
+            <img src="bolsaslider/Bolsa Drika 1.JPG" class="slide" alt="" loading="lazy">
+            <img src="bolsaslider/Bolsa Maia 1.JPG" class="slide" alt="" loading="lazy">
+            <img src="bolsaslider/Mateira e Porta Vinho 1.JPG" class="slide" alt="" loading="lazy">
+        </section>  
+
+        <main class="products-grid">
+  <!-- Produto 1 -->
+  <div class="product" onclick="showProductDetails('produto1')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Artemis 1.png" alt="Bolsa Artemis" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Artemis 2.png" alt="Bolsa Artemis" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Artemis</h2>
+    <p>Bolsa artesanal de crochê, perfeita para o dia a dia e ocasiões especiais.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Artemis" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 2 -->
+  <div class="product" onclick="showProductDetails('produto2')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Bali 1.png" alt="Bolsa Bali" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Bali 2.png" alt="Bolsa Bali" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Bali</h2>
+    <p>Design exclusivo, feita à mão com fios de alta qualidade.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Bali" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 3 -->
+  <div class="product" onclick="showProductDetails('produto3')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Carmem 1.png" alt="Bolsa Carmem" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Carmem 2.png" alt="Bolsa Carmem" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Carmem</h2>
+    <p>Estilo e praticidade em uma peça única de crochê.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Carmem" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 4 -->
+  <div class="product" onclick="showProductDetails('produto4')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Carteira Barbie 1.png" alt="Bolsa Carteira Barbie" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Carteira Barbie 2.png" alt="Bolsa Carteira Barbie" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Carteira Barbie</h2>
+    <p>Ideal para quem aprecia momentos especiais com estilo.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Carteira Barbie" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 5 -->
+  <div class="product" onclick="showProductDetails('produto5')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Drika 1.png" alt="Bolsa Drika" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Drika 2.png" alt="Bolsa Drika" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Drika</h2>
+    <p>Bolsa versátil, combina com diversos looks e ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Drika" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 6 -->
+  <div class="product" onclick="showProductDetails('produto6')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Florença 1.png" alt="Bolsa Florença" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Florença 2.png" alt="Bolsa Florença" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Florença</h2>
+    <p>Detalhes delicados e acabamento impecável.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Florença" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 7 -->
+  <div class="product" onclick="showProductDetails('produto7')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Flores 1.png" alt="Bolsa Flores" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Flores 2.png" alt="Bolsa Flores" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Flores</h2>
+    <p>Compacta e charmosa, ideal para o dia a dia.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Flores" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 8 -->
+  <div class="product" onclick="showProductDetails('produto8')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Isis 1.png" alt="Bolsa Isis" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Isis 2.png" alt="Bolsa Isis" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Isis</h2>
+    <p>Peça exclusiva, feita com muito carinho e dedicação.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Isis" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 9 -->
+  <div class="product" onclick="showProductDetails('produto9')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Lola 1.png" alt="Bolsa Lola" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Lola 2.png" alt="Bolsa Lola" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Lola</h2>
+    <p>Design moderno e sofisticado para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Lola" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 10 -->
+  <div class="product" onclick="showProductDetails('produto10')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Lorena 1.png" alt="Bolsa Lorena" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Lorena 2.png" alt="Bolsa Lorena" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Lorena</h2>
+    <p>Bolsa espaçosa, perfeita para quem precisa de praticidade.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Lorena" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 11 -->
+  <div class="product" onclick="showProductDetails('produto11')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Magnólia 1.png" alt="Bolsa Magnólia" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Magnólia 2.png" alt="Bolsa Magnólia" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Magnólia</h2>
+    <p>Toque artesanal e acabamento de alta qualidade.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Magnólia" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 12 -->
+  <div class="product" onclick="showProductDetails('produto12')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Maia 1.png" alt="Bolsa Maia" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Maia 2.png" alt="Bolsa Maia" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Maia</h2>
+    <p>Ideal para quem busca exclusividade e estilo.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Maia" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 13 -->
+  <div class="product" onclick="showProductDetails('produto13')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Margarida 1.png" alt="Bolsa Margarida" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Margarida 2.png" alt="Bolsa Margarida" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Margarida</h2>
+    <p>Bolsa leve, prática e cheia de charme.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Margarida" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 14 -->
+  <div class="product" onclick="showProductDetails('produto14')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Meg 1.png" alt="Bolsa Meg" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Meg 2.png" alt="Bolsa Meg" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Meg</h2>
+    <p>Perfeita para compor looks casuais e elegantes.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Meg" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 15 -->
+  <div class="product" onclick="showProductDetails('produto15')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Megan 1.png" alt="Bolsa Megan" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Megan 2.png" alt="Bolsa Megan" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Megan</h2>
+    <p>Estilo e praticidade em uma peça única.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Megan" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 16 -->
+  <div class="product" onclick="showProductDetails('produto16')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Melani 1.png" alt="Bolsa Melani" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Melani 2.png" alt="Bolsa Melani" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Melani</h2>
+    <p>Detalhes diferenciados e acabamento artesanal.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Melani" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 17 -->
+  <div class="product" onclick="showProductDetails('produto17')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Mini Linha Encanto 1.png" alt="Bolsa Mini Linha Encanto" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Mini Linha Encanto 2.png" alt="Bolsa Mini Linha Encanto" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Mini Linha Encanto</h2>
+    <p>Bolsa elegante, feita para quem valoriza o feito à mão.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Mini Linha Encanto" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 18 -->
+  <div class="product" onclick="showProductDetails('produto18')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Miranda 1.png" alt="Bolsa Miranda" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Miranda 2.png" alt="Bolsa Miranda" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Miranda</h2>
+    <p>Peça exclusiva, feita com fios de alta qualidade.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Miranda" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 19 -->
+  <div class="product" onclick="showProductDetails('produto19')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Olivia 1.png" alt="Bolsa Olivia" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Olivia 2.png" alt="Bolsa Olivia" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Olivia</h2>
+    <p>Design moderno e acabamento impecável.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Olivia" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 20 -->
+  <div class="product" onclick="showProductDetails('produto20')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Pamela 1.png" alt="Bolsa Pamela" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Pamela 2.png" alt="Bolsa Pamela" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Pamela</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Pamela" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 21 -->
+  <div class="product" onclick="showProductDetails('produto21')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Paris 1.png" alt="Bolsa Paris" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Paris 2.png" alt="Bolsa Paris" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Paris</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Paris" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 22 -->
+  <div class="product" onclick="showProductDetails('produto22')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Praia 1.png" alt="Bolsa Praia" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Praia 2.png" alt="Bolsa Praia" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Praia</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Praia" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 23 -->
+  <div class="product" onclick="showProductDetails('produto23')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Riviera 1.png" alt="Bolsa Riviera" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Riviera 2.png" alt="Bolsa Riviera" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Riviera</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Riviera" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 24 -->
+  <div class="product" onclick="showProductDetails('produto24')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Sophie 1.png" alt="Bolsa Sophie" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Sophie 2.png" alt="Bolsa Sophie" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Sophie</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Sophie" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 25 -->
+  <div class="product" onclick="showProductDetails('produto25')">
+    <div class="product-images">
+      <img src="bolsas/Bolsa Tiphani 1.png" alt="Bolsa Tiphani" class="main-img active" loading="lazy">
+      <img src="bolsas/Bolsa Tiphani 2.png" alt="Bolsa Tiphani" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Bolsa Tiphani</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Bolsa Tiphani" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 26 -->
+  <div class="product" onclick="showProductDetails('produto26')">
+    <div class="product-images">
+      <img src="bolsas/Carteira Linha Encanto.png" alt="Carteira Linha Encanto" class="main-img active" loading="lazy">
+      <img src="bolsas/Carteira Linha Encanto 2.png" alt="Carteira Linha Encanto" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Carteira Linha Encanto</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Carteira Linha Encanto" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 27 -->
+  <div class="product" onclick="showProductDetails('produto27')">
+    <div class="product-images">
+      <img src="bolsas/Carteira Luna 1.png" alt="Carteira Luna" class="main-img active" loading="lazy">
+      <img src="bolsas/Carteira Luna 2.png" alt="Carteira Luna" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Carteira Luna</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Carteira Luna" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Produto 28 -->
+  <div class="product" onclick="showProductDetails('produto28')">
+    <div class="product-images">
+      <img src="bolsas/Mateira e Porta Vinho 1.png" alt="Mateira e Porta Vinho" class="main-img active" loading="lazy">
+      <img src="bolsas/Mateira e Porta Vinho 2.png" alt="Mateira e Porta Vinho" class="main-img" loading="lazy">
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateProductImages(this, -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateProductImages(this, 1)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <h2>Mateira e Porta Vinho</h2>
+    <p>Bolsa artesanal, perfeita para todas as ocasiões.</p>
+    <a href="https://wa.me/message/7XS7DGTNCKBWG1?text=Olá! Tenho interesse na Mateira e Porta Vinho" target="_blank" class="whatsapp-btn">
+      <i class='bx bxl-whatsapp'></i>
+      Comprar no WhatsApp
+    </a>
+  </div>
+</main>
+        
+        <section id="quem-somos" class="quem-somos">
+            <h2>Quem somos</h2>
+            <div class="quem-somos-container">
+                <p class="texto-grande">
+                    ATELIÊ " BOLSAS E ARTESANATOS. "<br>
+                    SOMOS UMA FAMÍLIA DE MULHERES ARTESÃS E HÁ 1 ANO CONFECCIONANDO BOLSAS DE CROCHÊ MODERNO, COM MODELOS E ACABAMENTOS INCRÍVEIS PARA VOCÊ QUE GOSTA DE ANDAR NA MODA, COM ESTILO E ELEGÂNCIA.<br>
+                    OS MODELOS SÃO PRODUZIDOS ARTESANALMENTE COM FIOS DE MALHA PREMIUM, FIO NÁUTICO E ACESSÓRIOS EM METAL, MADEIRA, COURO ECOLÓGICO ENTRE OUTROS.<br>
+                    TEMOS COMO FOCO PRINCIPAL A ENTREGA DE PEÇAS MODERNAS E VERSÁTEIS PARA VOCÊ ARRASAR NO SEU LOOK.<br>
+                    NOSSO COMPROMISSO É PROPORCIONAR A VOCÊ UMA EXPERIÊNCIA APAIXONANTE NO MUNDO DO CROCHÊ. AO ADQUIRIR UMA PEÇA EM CROCHÊ, VOCÊ ESTARÁ INCENTIVANDO O ARTESANATO BRASILEIRO.
+                </p>
+            </div>
+        </section>          
+
+        <!-- Incluindo o arquivo de rodapé -->
+        <div id="footer-container"></div>
+        <script>
+            fetch('rodape.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o rodapé:', error));
+        </script>
+
+        <button id="scrollToTopBtn" class="scroll-to-top">TOPO</button>
+
+    <script src="script.js"></script>
+       
+    </body>  
+   
+</html>
+
