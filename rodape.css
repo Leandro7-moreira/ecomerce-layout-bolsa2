@@ -1,127 +1,132 @@
-/* Seção de pagamento do rodapé */
-.pagamento-selos {
-    background-color: #F8BBD0;
-    padding: 40px 8%;
-    border-top: 3px solid #FF7043;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* Container principal da seção de pagamento do rodapé */
+.pagamento-selos { 
+    padding: 40px 8%; /* espaçamento interno */
+    border-top: 3px solid #FF7043; /* borda superior laranja */
+    display: flex; /* usa flexbox */
+    flex-direction: column; /* organiza em coluna */
+    align-items: center; /* centraliza horizontalmente */
+    justify-content: center; /* centraliza verticalmente */
+    margin-left: 200px; /* margem esquerda para espaçamento */
+    margin-right: 200px; /* margem direita para espaçamento */
+    width: 100%; /* ocupa toda largura */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
+/* Container centralizador dos blocos */
+.container { 
+    max-width: 1200px; /* largura máxima */
+    margin: 0 auto; /* centraliza horizontalmente */
+    display: flex; /* usa flexbox */
+    flex-direction: row; /* organiza em linha */
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: flex-start; /* alinha ao topo */
+    gap: 40px; /* espaço entre blocos */
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    width: 100%;
+/* Linha para agrupar colunas */
+.row { 
+    display: flex; /* usa flexbox */
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: flex-start; /* alinha ao topo */
+    gap: 40px; /* espaço entre colunas */
+    width: 100%; /* ocupa toda largura */
 }
 
 /* Seção de pagamento */
-.pagamento {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Bloco de formas de pagamento */
+.pagamento { 
+    flex: 1; /* ocupa espaço igual */
+    background-color: rgba(255, 255, 255, 0.9); /* fundo branco translúcido */
+    padding: 30px; /* espaçamento interno */
+    border-radius: 15px; /* borda arredondada */
+    display: flex; /* usa flexbox */
+    flex-direction: column; /* organiza em coluna */
+    align-items: center; /* centraliza horizontalmente */
 }
 
-.pagamento .titulo {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
+/* Título da seção de pagamento */
+.pagamento .titulo { 
+    font-size: 1.5rem; /* tamanho da fonte */
+    margin-bottom: 20px; /* espaço abaixo */
+    color: #333; /* cor do texto */
+    text-align: center; /* centraliza texto */
 }
 
-.bandeiras-pagamento {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 20px;
+/* Container das bandeiras de pagamento */
+.bandeiras-pagamento { 
+    display: flex; /* usa flexbox */
+    flex-wrap: wrap; /* permite quebra de linha */
+    gap: 15px; /* espaço entre bandeiras */
+    justify-content: center; /* centraliza horizontalmente */
+    margin-bottom: 20px; /* espaço abaixo */
 }
 
-.bandeiras-pagamento img {
-    height: 30px;
-    width: auto;
+/* Imagem das bandeiras de pagamento */
+.bandeiras-pagamento img { 
+    height: 30px; /* altura fixa */
+    width: auto; /* largura automática */
 }
 
-.gateways-rodape {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+/* Container dos gateways de pagamento */
+.gateways-rodape { 
+    display: flex; /* usa flexbox */
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 15px; /* espaço entre gateways */
+    margin-top: 20px; /* espaço acima */
 }
 
-.gateways-rodape img {
-    height: 40px;
-    width: auto;
+/* Imagem dos gateways de pagamento */
+.gateways-rodape img { 
+    height: 40px; /* altura fixa */
+    width: auto; /* largura automática */
 }
 
 /* Seção de selos */
-.selos {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Bloco de selos de segurança */
+.selos { 
+    flex: 1; /* ocupa espaço igual */
+    background-color: rgba(255, 255, 255, 0.9); /* fundo branco translúcido */
+    padding: 30px; /* espaçamento interno */
+    border-radius: 15px; /* borda arredondada */
+    display: flex; /* usa flexbox */
+    flex-direction: column; /* organiza em coluna */
+    align-items: center; /* centraliza horizontalmente */
+    margin-left: 100px; /* espaçamento entre os cartoes e selo de segurança */
 }
 
-.selos .titulo {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
+/* Título da seção de selos */
+.selos .titulo { 
+    font-size: 1.5rem; /* tamanho da fonte */
+    margin-bottom: 20px; /* espaço abaixo */
+    color: #333; /* cor do texto */
+    text-align: center; /* centraliza texto */
 }
 
-.selos ul {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+/* Lista de selos */
+.selos ul { 
+    display: flex; /* usa flexbox */
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 15px; /* espaço entre selos */
 }
 
-.selos img {
-    height: 60px;
-    width: auto;
+/* Imagem dos selos */
+.selos img { 
+    height: 60px; /* altura fixa */
+    width: auto; /* largura automática */
 }
 
 /* Rodapé */
-footer {
-    background-color: #F8BBD0;
-    padding: 40px 0 20px 0;
-    border-top: 3px solid #FF7043;
+/* Rodapé principal */
+footer { 
+    padding: 40px 0 20px 0; /* espaçamento interno */
+    border-top: 3px solid #FF7043; /* borda superior laranja */
+    margin-left: 300px; /* margem esquerda para espaçamento */
 }
 
-footer p {
-    text-align: center;
-    color: #333;
-    font-size: 1rem;
-    margin: 0;
-    padding: 10px 0;
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-    .container, .row {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .pagamento, .selos {
-        width: 100%;
-    }
+/* Texto do rodapé */
+footer p { 
+    text-align: center; /* centraliza texto */
+    color: #333; /* cor do texto */
+    font-size: 1rem; /* tamanho da fonte */
+    margin: 0; /* remove margens */
+    padding: 10px 0; /* espaçamento interno */
 }
