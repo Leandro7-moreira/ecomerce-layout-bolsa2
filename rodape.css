@@ -1,3 +1,8 @@
+/* Remover fundo azul do final da tela */
+body {
+    background-color: #F8BBD0 !important;
+}
+
 /* Container principal da seção de pagamento do rodapé */
 .pagamento-selos { 
     padding: 40px 8%; /* espaçamento interno */
@@ -18,7 +23,7 @@
     display: flex; /* usa flexbox */
     flex-direction: row; /* organiza em linha */
     justify-content: center; /* centraliza horizontalmente */
-    align-items: flex-start; /* alinha ao topo */
+    align-items: flex-end; /* alinha ao fundo */
     gap: 40px; /* espaço entre blocos */
 }
 
@@ -26,21 +31,24 @@
 .row { 
     display: flex; /* usa flexbox */
     justify-content: center; /* centraliza horizontalmente */
-    align-items: flex-start; /* alinha ao topo */
+    align-items: flex-end; /* alinha ao fundo */
     gap: 40px; /* espaço entre colunas */
     width: 100%; /* ocupa toda largura */
 }
 
 /* Seção de pagamento */
-/* Bloco de formas de pagamento */
-.pagamento { 
-    flex: 1; /* ocupa espaço igual */
+/* Bloco de formas de pagamento e selos - padronizados */
+.pagamento, .selos {
+    width: 400px; /* largura fixa para ambos */
+    min-height: 260px; /* altura mínima igual para ambos */
     background-color: rgba(255, 255, 255, 0.9); /* fundo branco translúcido */
     padding: 30px; /* espaçamento interno */
     border-radius: 15px; /* borda arredondada */
     display: flex; /* usa flexbox */
     flex-direction: column; /* organiza em coluna */
     align-items: center; /* centraliza horizontalmente */
+    justify-content: center; /* centraliza verticalmente */
+    box-sizing: border-box; /* considera bordas e padding na largura total */
 }
 
 /* Título da seção de pagamento */
@@ -62,7 +70,7 @@
 
 /* Imagem das bandeiras de pagamento */
 .bandeiras-pagamento img { 
-    height: 30px; /* altura fixa */
+    height: 45px; /* altura aumentada */
     width: auto; /* largura automática */
 }
 
@@ -81,18 +89,6 @@
 }
 
 /* Seção de selos */
-/* Bloco de selos de segurança */
-.selos { 
-    flex: 1; /* ocupa espaço igual */
-    background-color: rgba(255, 255, 255, 0.9); /* fundo branco translúcido */
-    padding: 30px; /* espaçamento interno */
-    border-radius: 15px; /* borda arredondada */
-    display: flex; /* usa flexbox */
-    flex-direction: column; /* organiza em coluna */
-    align-items: center; /* centraliza horizontalmente */
-    margin-left: 100px; /* espaçamento entre os cartoes e selo de segurança */
-}
-
 /* Título da seção de selos */
 .selos .titulo { 
     font-size: 1.5rem; /* tamanho da fonte */
@@ -102,24 +98,30 @@
 }
 
 /* Lista de selos */
-.selos ul { 
+.selos ul {
+    width: 100%; /* ocupa toda largura */
     display: flex; /* usa flexbox */
-    justify-content: center; /* centraliza horizontalmente */
+    flex-direction: column; /* organiza em coluna */
+    align-items: center; /* centraliza horizontalmente */
+    justify-content: center; /* centraliza verticalmente */
     gap: 15px; /* espaço entre selos */
 }
 
 /* Imagem dos selos */
-.selos img { 
-    height: 60px; /* altura fixa */
-    width: auto; /* largura automática */
+.selos img {
+    display: block; /* usa bloco */
+    margin: 0 auto; /* centraliza horizontalmente */
 }
 
 /* Rodapé */
 /* Rodapé principal */
 footer { 
     padding: 40px 0 20px 0; /* espaçamento interno */
-    border-top: 3px solid #FF7043; /* borda superior laranja */
-    margin-left: 300px; /* margem esquerda para espaçamento */
+    border-top: none; /* remover borda superior */
+    margin: 0 auto; /* centralizar horizontalmente */
+    max-width: 1200px; /* largura máxima */
+    background: transparent; /* fundo transparente */
+    margin-left: 400px; /* margem esquerda para espaçamento */
 }
 
 /* Texto do rodapé */
@@ -129,4 +131,26 @@ footer p {
     font-size: 1rem; /* tamanho da fonte */
     margin: 0; /* remove margens */
     padding: 10px 0; /* espaçamento interno */
+}
+
+/* Linha divisória centralizada acima dos métodos de pagamento/selos */
+.divider-centralizada {
+    width: 100%; /* ocupa toda largura */
+    max-width: 1200px; /* largura máxima */
+    margin: 0 auto 40px auto; /* centralizar horizontalmente */
+    height: 3px; /* altura da linha */
+    background-color: #FF7043; /* cor da linha */
+    box-shadow: 0 2px 4px rgba(255, 112, 67, 0.3); /* sombra da linha */
+    border-radius: 2px; /* borda arredondada */
+}
+
+/* Linha divisória centralizada acima do rodapé */
+.divider-centralizada-footer {
+    width: 100%; /* ocupa toda largura */
+    max-width: 1200px; /* largura máxima */
+    margin: 40px auto 0 auto; /* centralizar horizontalmente */
+    height: 3px; /* altura da linha */
+    background-color: #FF7043; /* cor da linha */
+    box-shadow: 0 2px 4px rgba(255, 112, 67, 0.3); /* sombra da linha */
+    border-radius: 2px; /* borda arredondada */
 }

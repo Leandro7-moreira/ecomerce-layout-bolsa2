@@ -1,12 +1,19 @@
 // Código para Slider
+// Slider automático baseado nas imagens com classe .slide
+
 document.addEventListener('DOMContentLoaded', function() {
-    const radios = document.querySelectorAll('input[name="btn-radio"]'); // Atualize aqui
+    const slides = document.querySelectorAll('.slider .slide');
     let currentIndex = 0;
 
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
     function autoSlide() {
-        radios[currentIndex].checked = false; // Desmarca o botão atual
-        currentIndex = (currentIndex + 1) % radios.length; // Incrementa o índice
-        radios[currentIndex].checked = true; // Marca o próximo botão
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
     }
 
     setInterval(autoSlide, 5000); // Troca a cada 5 segundos
