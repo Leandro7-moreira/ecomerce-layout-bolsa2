@@ -26,22 +26,18 @@
     }
 
     header {
-        flex-direction: column !important;
         align-items: center !important;
-        gap: 16px !important;
-        padding: 1.2rem 0.5rem !important;
-        text-align: center !important;
-        width: 100% !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+        width: 100vw !important;
         box-sizing: border-box !important;
     }
 
     .logo {
-        display: flex !important;
-        flex-direction: column !important;
         align-items: center !important;
-        gap: 8px !important;
-        width: 100% !important;
+        justify-content: center !important;
         margin: 0 auto !important;
+        width: 100vw !important;
     }
 
     .logo img {
@@ -55,55 +51,55 @@
         margin-top: 6px !important;
     }
 
-    .navegação {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 10px !important;
-        width: 100% !important;
-        margin-top: 0.5rem !important;
+    .slider {
+        margin: 10px auto 0 auto !important;
+        left: 0 !important;
+        right: 0 !important;
     }
 
-    .navegação a {
-        font-size: 1.1rem !important;
+    .navegação {
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 18px !important;
+        width: 100vw !important;
+        margin: 0 auto !important;
+    }
+
+    .navegação li {
+        display: inline-block !important;
+        margin: 0 !important;
     }
 
     .btn-social {
-        display: flex !important;
-        gap: 16px !important;
-        margin-top: 1rem !important;
-        justify-content: center !important;
+        gap: 28px !important;
+        margin-top: 1.2rem !important;
     }
 
     .btn-social i {
-        font-size: 1.5rem !important;
+        font-size: 2.1rem !important;
+        color: #333 !important;
     }
 
-    .slider {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 160px !important;
-        margin: 10px 0 0 0 !important;
-        overflow: hidden !important;
-        position: relative !important;
-        background: transparent !important;
-        box-sizing: border-box !important;
+    .btn-social a {
+        color: #333 !important;
     }
 
-    .slider img,
-    .slider .slide {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
+    .product-images img.main-img {
         display: none !important;
-        position: absolute !important;
-        left: 0 !important;
-        top: 0 !important;
     }
-    .slider .slide.active,
-    .slider img.active {
+
+    .product-images img.main-img.active {
         display: block !important;
-        position: relative !important;
-        z-index: 2 !important;
+    }
+
+    .quem-somos-container {
+        text-align: center !important;
+        margin: 0 auto !important;
+        padding: 12px 8px !important;
+        width: 98vw !important;
+        max-width: 98vw !important;
+        box-sizing: border-box !important;
     }
 
     .products-grid {
