@@ -74,9 +74,9 @@
 
     /* Estilos para o slider no mobile */
     .slider { 
-        height: 60vw; /* Altura proporcional à largura da viewport - AUMENTADO */
+        height: 80vw; /* Altura proporcional à largura da viewport - AUMENTADO */
         min-height: 140px; /* Altura mínima */
-        max-height: 250px; /* Altura máxima - AUMENTADO */
+        max-height: 300px; /* Altura máxima - AUMENTADO */
         width: 100%; /* Ocupa largura total */
         margin: 1rem auto; /* Centraliza e adiciona margem vertical */
         border-radius: 12px; /* Borda arredondada */
@@ -251,7 +251,7 @@
 
     /* Imagens do produto ajustadas para tablet */
     .product-images img.main-img {
-        height: 250px; /* Aumentei a altura para tablet */
+        height: 300px; /* Aumentei a altura para tablet */
     }
 
     /* Card individual do produto (ajuste para flexbox) */
@@ -265,6 +265,13 @@
     /* Garante que a descrição ocupe o espaço disponível */
     .product p {
         flex-grow: 1; /* Permite que a descrição cresça e ocupe o espaço */
+    }
+
+    /* Estilos para o contêiner de imagens dentro do card de produto no tablet */
+    .product-images {
+        aspect-ratio: unset !important; /* Remove a proporção fixa */
+        height: auto !important; /* Permite que a altura se ajuste à imagem */
+        /* Mantém width: 100% e outras propriedades existentes */
     }
 }
 
@@ -284,7 +291,7 @@
 
     /* Imagens do produto ajustadas para desktop */
     .product-images img.main-img {
-        height: 300px; /* Altura fixa para desktop - AUMENTADO */
+        height: 350px; /* Altura fixa para desktop - AUMENTADO */
     }
 
     /* Card individual do produto (ajuste para flexbox) */
@@ -298,6 +305,13 @@
      /* Garante que a descrição ocupe o espaço disponível */
     .product p {
         flex-grow: 1; /* Permite que a descrição cresça e ocupe o espaço */
+    }
+
+    /* Estilos para o contêiner de imagens dentro do card de produto no desktop */
+    .product-images {
+        aspect-ratio: unset !important; /* Remove a proporção fixa */
+        height: auto !important; /* Permite que a altura se ajuste à imagem */
+        /* Mantém width: 100% e outras propriedades existentes */
     }
 }
 
@@ -331,6 +345,13 @@
      /* Garante que a descrição ocupe o espaço disponível */
     .product p {
         flex-grow: 1; /* Permite que a descrição cresça e ocupe o espaço */
+    }
+
+    /* Estilos para o contêiner de imagens dentro do card de produto no desktop grande */
+    .product-images {
+        aspect-ratio: unset !important; /* Remove a proporção fixa */
+        height: auto !important; /* Permite que a altura se ajuste à imagem */
+        /* Mantém width: 100% e outras propriedades existentes */
     }
 }
 
