@@ -14,12 +14,15 @@
 /* Mobile (até 480px) */
 @media (max-width: 480px) {
     body {
-        font-size: 14px;           /* Reduz tamanho da fonte para mobile */
+        font-size: 14px; /* Reduz tamanho da fonte para mobile */
     }
 
     header {
-        padding: 1.5rem 0.5rem;    /* Reduz padding do header */
-        text-align: center;        /* Centraliza conteúdo */
+        flex-direction: column !important; /* Empilha os itens */
+        align-items: center !important;    /* Centraliza */
+        gap: 12px !important;              /* Espaço entre itens */
+        padding: 1.5rem 0.5rem !important; /* Reduz padding do header */
+        text-align: center !important;     /* Centraliza conteúdo */
     }
 
     .logo {
@@ -27,6 +30,15 @@
         margin-bottom: 0.3rem;     /* Espaçamento inferior */
         text-align: center;        /* Centraliza logo */
         max-width: 100%;           /* Limita largura */
+        width: 100% !important;    /* Garante largura total */
+        justify-content: center !important; /* Centraliza flex */
+    }
+
+    .navegação {
+        flex-direction: column !important; /* Menu em coluna */
+        align-items: center !important;
+        gap: 8px !important;
+        width: 100% !important;
     }
 
     .slider {
@@ -34,19 +46,45 @@
         width: 100vw !important;   /* Ocupa toda largura */
         max-width: 100vw !important; /* Limita largura máxima */
         margin: 12px auto 0 !important; /* Centraliza e adiciona margem superior */
-        overflow-x: hidden !important; /* Remove rolagem horizontal */
+        overflow: hidden !important; /* Remove rolagem horizontal */
         position: relative !important; /* Posicionamento relativo */
+        background: transparent !important;
     }
 
     .slider img,
     .slider .slide {
         width: 100vw !important;   /* Ocupa toda largura */
         max-width: 100vw !important; /* Limita largura máxima */
-        height: 100% !important;   /* Altura total */
+        height: 180px !important;  /* Altura fixa */
         object-fit: cover !important; /* Mantém proporção */
-        display: block !important; /* Exibe como bloco */
-        position: relative !important; /* Posicionamento relativo */
+        display: none !important;  /* Esconde por padrão */
+        position: absolute !important; /* Posicionamento absoluto */
         left: 0 !important;        /* Alinha à esquerda */
+        top: 0 !important;         /* Alinha ao topo */
+    }
+    .slider .slide.active,
+    .slider img.active {
+        display: block !important; /* Mostra slide ativo */
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .products-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Uma coluna para mobile */
+        gap: 20px !important;                 /* Espaço entre produtos */
+        padding: 10px 0 !important;           /* Padding vertical */
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .product {
+        padding: 14px 8px !important;        /* Padding interno */
+        border-radius: 10px !important;      /* Cantos arredondados */
+        margin: 0 5px !important;            /* Margem horizontal */
+        text-align: center !important;       /* Centraliza conteúdo */
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .product-images img.main-img {
@@ -57,17 +95,39 @@
         margin: 0 auto 10px !important; /* Centraliza e adiciona margem */
     }
 
-    .products-grid {
-        grid-template-columns: 1fr; /* Uma coluna para mobile */
-        gap: 20px;                 /* Espaço entre produtos */
-        padding: 10px 0;          /* Padding vertical */
+    .quem-somos {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        padding: 24px 8px !important;
+        box-sizing: border-box !important;
+    }
+    .quem-somos-container {
+        width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
     }
 
-    .product {
-        padding: 14px 8px;        /* Padding interno */
-        border-radius: 10px;      /* Cantos arredondados */
-        margin: 0 5px;            /* Margem horizontal */
-        text-align: center;       /* Centraliza conteúdo */
+    .pagamento-selos {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        padding: 20px 4px !important;
+        box-sizing: border-box !important;
+    }
+    .container, .row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+    .pagamento, .selos {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 0 16px 0 !important;
+        padding: 18px 8px !important;
+        box-sizing: border-box !important;
     }
 }
 
@@ -78,36 +138,98 @@
     }
 
     header {
-        padding: 2rem;            /* Aumenta padding */
+        flex-direction: row !important; /* Itens em linha */
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 16px !important;
+        padding: 2rem !important;            /* Aumenta padding */
+        text-align: left !important;
     }
 
     .logo {
         font-size: 2rem;          /* Aumenta logo */
-        text-align: center;       /* Centraliza logo */
+        text-align: left;         /* Alinha à esquerda */
         letter-spacing: 1.2px;    /* Espaçamento entre letras */
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    .navegação {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 16px !important;
+        width: auto !important;
     }
 
     .slider {
-        height: 250px;            /* Altura para tablet */
-        width: 90%;               /* Largura proporcional */
-        margin: 0 auto;           /* Centraliza */
+        height: 250px !important;            /* Altura para tablet */
+        width: 90vw !important;              /* Largura proporcional */
+        max-width: 90vw !important;
+        margin: 0 auto !important;           /* Centraliza */
+        overflow: hidden !important;
+        position: relative !important;
+        background: transparent !important;
+    }
+
+    .slider img,
+    .slider .slide {
+        width: 90vw !important;
+        max-width: 90vw !important;
+        height: 250px !important;
+        object-fit: cover !important;
+        display: none !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+    .slider .slide.active,
+    .slider img.active {
+        display: block !important;
+        position: relative !important;
+        z-index: 2 !important;
     }
 
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-        gap: 22px;                /* Espaço entre produtos */
-        padding: 18px 0;          /* Padding vertical */
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Duas colunas */
+        gap: 22px !important;                /* Espaço entre produtos */
+        padding: 18px 0 !important;          /* Padding vertical */
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 
     .product {
-        padding: 16px 10px;       /* Padding interno */
-        border-radius: 12px;      /* Cantos arredondados */
-        margin: 0 8px;            /* Margem horizontal */
-        text-align: center;       /* Centraliza conteúdo */
+        padding: 16px 10px !important;       /* Padding interno */
+        border-radius: 12px !important;      /* Cantos arredondados */
+        margin: 0 8px !important;            /* Margem horizontal */
+        text-align: center !important;       /* Centraliza conteúdo */
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .product-images img.main-img {
-        height: 180px;            /* Altura fixa para imagens */
+        height: 180px !important;            /* Altura fixa para imagens */
+        width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto 10px !important;
+    }
+
+    .quem-somos,
+    .quem-somos-container,
+    .pagamento-selos,
+    .pagamento,
+    .selos {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .container, .row {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        width: 100% !important;
     }
 }
 
@@ -118,31 +240,97 @@
     }
 
     header {
-        padding: 3rem;            /* Aumenta padding */
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 20px !important;
+        padding: 3rem !important;            /* Aumenta padding */
+        text-align: left !important;
     }
 
     .logo {
         font-size: 2.5rem;        /* Aumenta logo */
+        text-align: left;
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    .navegação {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: auto !important;
     }
 
     .slider {
-        height: 300px;            /* Altura para desktop */
-        width: 85%;               /* Largura proporcional */
-        margin: 0 auto;           /* Centraliza */
+        height: 300px !important;            /* Altura para desktop */
+        width: 85vw !important;              /* Largura proporcional */
+        max-width: 900px !important;
+        margin: 0 auto !important;           /* Centraliza */
+        overflow: hidden !important;
+        position: relative !important;
+        background: transparent !important;
+    }
+
+    .slider img,
+    .slider .slide {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 300px !important;
+        object-fit: cover !important;
+        display: none !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+    .slider .slide.active,
+    .slider img.active {
+        display: block !important;
+        position: relative !important;
+        z-index: 2 !important;
     }
 
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-        gap: 25px;                /* Espaço entre produtos */
-        padding: 25px;            /* Padding interno */
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Duas colunas */
+        gap: 25px !important;                /* Espaço entre produtos */
+        padding: 25px !important;            /* Padding interno */
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 
     .product {
-        padding: 20px;            /* Padding interno */
+        padding: 20px !important;            /* Padding interno */
+        border-radius: 14px !important;
+        margin: 0 10px !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .product-images img.main-img {
-        height: 250px;            /* Altura fixa para imagens */
+        height: 250px !important;            /* Altura fixa para imagens */
+        width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto 10px !important;
+    }
+
+    .quem-somos,
+    .quem-somos-container,
+    .pagamento-selos,
+    .pagamento,
+    .selos {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .container, .row {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+        width: 100% !important;
     }
 }
 
@@ -153,54 +341,72 @@
     }
 
     header {
-        padding: 4rem;            /* Aumenta padding */
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 24px !important;
+        padding: 4rem !important;            /* Aumenta padding */
+        text-align: left !important;
     }
 
     .logo {
         font-size: 3rem;          /* Aumenta logo */
+        text-align: left;
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    .navegação {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 24px !important;
+        width: auto !important;
     }
 
     .slider {
-        width: 100%;              /* Largura total */
-        max-width: 900px;         /* Limita largura máxima */
-        height: 320px;            /* Altura fixa */
-        margin: 32px auto 0;      /* Centraliza e adiciona margem */
-        position: relative;       /* Posicionamento relativo */
-        overflow: hidden;         /* Esconde overflow */
-        background: transparent;  /* Fundo transparente */
+        width: 100% !important;              /* Largura total */
+        max-width: 900px !important;         /* Limita largura máxima */
+        height: 320px !important;            /* Altura fixa */
+        margin: 32px auto 0 !important;      /* Centraliza e adiciona margem */
+        position: relative !important;       /* Posicionamento relativo */
+        overflow: hidden !important;         /* Esconde overflow */
+        background: transparent !important;
     }
 
-    .slider .slide {
-        display: none;            /* Esconde slides por padrão */
-        width: 100%;              /* Largura total */
-        height: 100%;             /* Altura total */
-        object-fit: cover;        /* Mantém proporção */
-        position: absolute;       /* Posicionamento absoluto */
-        top: 0;                   /* Alinha ao topo */
-        left: 0;                  /* Alinha à esquerda */
-    }
-
-    .slider .slide.active {
-        display: block;           /* Mostra slide ativo */
-        position: relative;       /* Posicionamento relativo */
-    }
-
+    .slider .slide,
     .slider img {
-        width: 100%;              /* Largura total */
-        max-width: 100%;          /* Limita largura máxima */
-        height: 100%;             /* Altura total */
-        object-fit: cover;        /* Mantém proporção */
-        display: block;           /* Exibe como bloco */
+        display: none !important;            /* Esconde slides por padrão */
+        width: 100% !important;              /* Largura total */
+        height: 100% !important;             /* Altura total */
+        object-fit: cover !important;        /* Mantém proporção */
+        position: absolute !important;       /* Posicionamento absoluto */
+        top: 0 !important;                   /* Alinha ao topo */
+        left: 0 !important;                  /* Alinha à esquerda */
+    }
+
+    .slider .slide.active,
+    .slider img.active {
+        display: block !important;           /* Mostra slide ativo */
+        position: relative !important;
+        z-index: 2 !important;
     }
 
     .products-grid {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important; /* Duas colunas */
         gap: 30px !important;     /* Espaço entre produtos */
         padding: 30px !important; /* Padding interno */
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 
     .product {
-        padding: 25px;            /* Padding interno */
+        padding: 25px !important;            /* Padding interno */
+        border-radius: 16px !important;
+        margin: 0 12px !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .product-images img.main-img {
@@ -209,5 +415,22 @@
         object-fit: contain !important; /* Mantém proporção */
         display: block !important; /* Exibe como bloco */
         margin: 0 auto 10px !important; /* Centraliza e adiciona margem */
+    }
+
+    .quem-somos,
+    .quem-somos-container,
+    .pagamento-selos,
+    .pagamento,
+    .selos {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .container, .row {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 24px !important;
+        width: 100% !important;
     }
 }
