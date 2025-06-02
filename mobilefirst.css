@@ -74,7 +74,7 @@
 
     /* Estilos para o slider no mobile */
     .slider { 
-        height: 45vw; /* Altura proporcional à largura da viewport */
+        height: 60vw; /* Altura proporcional à largura da viewport */
         min-height: 140px; /* Altura mínima */
         max-height: 200px; /* Altura máxima */
         width: 100%; /* Ocupa largura total */
@@ -83,9 +83,9 @@
         overflow: cover; /* Esconde conteúdo que transborda */
     }
 
-    /* Imagens do slider */
+    /* Estilos para as imagens e slides individuais do slider no mobile */
     .slider img,
-    .slider .slide { /* Estilos para as imagens e slides individuais do slider no mobile */
+    .slider .slide { 
         width: 100%; /* Ocupa largura total do contêiner */
         height: 100%; /* Ocupa altura total do contêiner */
         object-fit: cover; /* Faz a imagem cobrir o contêiner (pode cortar) */
@@ -251,7 +251,20 @@
 
     /* Imagens do produto ajustadas para tablet */
     .product-images img.main-img {
-        height: 220px; /* Altura fixa para tablet */
+        height: 250px; /* Aumentei a altura para tablet */
+    }
+
+    /* Card individual do produto (ajuste para flexbox) */
+    .product {
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Organiza conteúdo em coluna */
+        justify-content: space-between; /* Distribui espaço, empurrando o botão para baixo */
+        /* min-height: 500px; /* Altura mínima removida */
+    }
+
+    /* Garante que a descrição ocupe o espaço disponível */
+    .product p {
+        flex-grow: 1; /* Permite que a descrição cresça e ocupe o espaço */
     }
 }
 
@@ -271,7 +284,20 @@
 
     /* Imagens do produto ajustadas para desktop */
     .product-images img.main-img {
-        height: 250px; /* Altura fixa para desktop */
+        height: 280px; /* Aumentei a altura para desktop */
+    }
+
+    /* Card individual do produto (ajuste para flexbox) */
+    .product {
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Organiza conteúdo em coluna */
+        justify-content: space-between; /* Distribui espaço, empurrando o botão para baixo */
+        /* min-height: 500px; /* Altura mínima removida */
+    }
+
+     /* Garante que a descrição ocupe o espaço disponível */
+    .product p {
+        flex-grow: 1; /* Permite que a descrição cresça e ocupe o espaço */
     }
 }
 
@@ -291,7 +317,20 @@
 
     /* Imagens do produto ajustadas para telas grandes */
     .product-images img.main-img {
-        height: 280px; /* Altura fixa para telas grandes */                                                                                             
+        height: 320px; /* Aumentei a altura para telas grandes */
+    }
+
+    /* Card individual do produto (ajuste para flexbox) */
+    .product {
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Organiza conteúdo em coluna */
+        justify-content: space-between; /* Distribui espaço, empurrando o botão para baixo */
+        /* min-height: 500px; /* Altura mínima removida */
+    }
+
+     /* Garante que a descrição ocupe o espaço disponível */
+    .product p {
+        flex-grow: 1; /* Permite que a descrição cresça e ocupe o espaço */
     }
 }
 
