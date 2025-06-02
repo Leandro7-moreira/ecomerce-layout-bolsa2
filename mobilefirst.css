@@ -160,20 +160,28 @@
 
     /* Seção de pagamento e selos em coluna para mobile */
     .pagamento-selos {
-        display: flex;
+        display: flex; /* Mantém display flex no container pai para gap e padding */
         flex-direction: column !important; /* Força a direção da coluna */
         gap: 1.5rem;
         padding: 1rem;
         width: 100%; /* Garante que o container ocupe a largura total */
+        box-sizing: border-box; /* Inclui padding na largura */
     }
 
-    /* Containers de pagamento e selos ocupando a largura total */
+    /* Containers de pagamento e selos ocupando a largura total e se comportando como blocos */
     .pagamento,
     .selos {
+        display: block !important; /* Força display block para empilhar */
         width: 100% !important; /* Força a largura total */
         padding: 1rem;
         border-radius: 12px;
         box-sizing: border-box; /* Garante que padding não cause overflow */
+        margin-bottom: 1.5rem; /* Adiciona espaço entre eles quando empilhados */
+    }
+
+    /* Remove a margem inferior do último item para evitar espaço extra */
+    .pagamento-selos .selos:last-child {
+        margin-bottom: 0 !important;
     }
 }
 
