@@ -158,20 +158,22 @@
         border-radius: 12px;
     }
 
-    /* Seção de pagamento e selos em coluna */
+    /* Seção de pagamento e selos em coluna para mobile */
     .pagamento-selos {
         display: flex;
-        flex-direction: column;
+        flex-direction: column !important; /* Força a direção da coluna */
         gap: 1.5rem;
         padding: 1rem;
+        width: 100%; /* Garante que o container ocupe a largura total */
     }
 
-    /* Containers de pagamento e selos */
+    /* Containers de pagamento e selos ocupando a largura total */
     .pagamento,
     .selos {
-        width: 100%;
+        width: 100% !important; /* Força a largura total */
         padding: 1rem;
         border-radius: 12px;
+        box-sizing: border-box; /* Garante que padding não cause overflow */
     }
 }
 
