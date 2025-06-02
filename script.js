@@ -70,7 +70,7 @@ function contactWhatsApp(img, desc) {
   // Número de telefone do contato (formato internacional, sem espaços ou símbolos)
   const phoneNumber = "5518991252162"; // Substitua pelo número desejado
 
-  const basePath = "https://leandro7-moreira.github.io/ecomerce-esporte/"; // Substitua pelo nome do seu repositório
+  const basePath = "https://leandro7-moreira.github.io/ecomerce-layout-bolsa2/"; // Substitua pelo nome do seu repositório
 
   // Gera o URL completo da imagem
   const imageUrl = `${basePath}/${img}`;
@@ -82,7 +82,9 @@ function contactWhatsApp(img, desc) {
   const encodedMessage = encodeURIComponent(message);
   
   // Gera o link do WhatsApp com o número e a mensagem
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  // Removendo qualquer caractere não numérico do número de telefone
+  const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${cleanPhoneNumber}&text=${encodedMessage}`;
   
   // Abre o link em uma nova aba
   window.open(whatsappUrl, '_blank');
