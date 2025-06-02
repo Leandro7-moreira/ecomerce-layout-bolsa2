@@ -9,308 +9,317 @@
 /* ===== MEDIA QUERIES ===== */
 
 /* Mobile (até 480px) - Ajustes para telas pequenas */
-@media (max-width: 480px) {
-    /* Configurações base do body para evitar scroll horizontal */
-    body {
-        font-size: 14px; /* Tamanho base da fonte reduzido para mobile */
-        overflow-x: hidden; /* Evita scroll horizontal */
-        max-width: 100vw; /* Limita largura à viewport */
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
+/* Configurações base do body para evitar scroll horizontal */
+/* Estilos para o corpo da página no mobile */
+@media (max-width: 480px) { 
+    body { 
+        font-size: 14px; /* Reduz o tamanho base da fonte */
+        overflow-x: hidden !important; /* Força a ocultação da barra de rolagem horizontal */
+        max-width: 100vw; /* Garante que a largura máxima seja a da viewport */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margem */
+        box-sizing: border-box; /* Inclui padding e borda no tamanho total */
     }
 
-    /* Header reorganizado em coluna para mobile */
-    header {
-        padding: 1rem; /* Reduz padding para economizar espaço */
-        text-align: center;
-        display: flex;
-        flex-direction: column; /* Empilha elementos verticalmente */
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
+    /* Estilos para o cabeçalho no mobile */
+    header { 
+        padding: 1rem; /* Reduz o padding */
+        text-align: center; /* Centraliza o texto */
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Organiza itens em coluna */
+        align-items: center; /* Centraliza itens horizontalmente */
+        gap: 1rem; /* Espaço entre itens flex */
+        width: 100%; /* Ocupa largura total */
     }
 
-    /* Logo centralizada e ajustada para mobile */
-    .logo {
-        display: flex;
-        flex-direction: column; /* Empilha logo e texto */
-        align-items: center;
-        gap: 0.5rem;
+    /* Estilos para a área do logo no mobile */
+    .logo { 
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Organiza itens em coluna */
+        align-items: center; /* Centraliza itens horizontalmente */
+        gap: 0.5rem; /* Espaço entre itens flex */
     }
 
-    /* Imagem do logo ajustada para mobile */
-    .logo img {
-        width: 120px; /* Tamanho reduzido para mobile */
-        height: 120px;
-        object-fit: contain;
+    /* Estilos para a imagem do logo no mobile */
+    .logo img { 
+        width: 120px; /* Define a largura */
+        height: 120px; /* Define a altura */
+        object-fit: contain; /* Garante que a imagem caiba sem cortar */
     }
 
-    /* Texto do logo ajustado para mobile */
-    .logo a {
-        font-size: 1.3rem; /* Fonte reduzida para mobile */
+    /* Estilos para o texto do logo no mobile */
+    .logo a { 
+        font-size: 1.3rem; /* Reduz o tamanho da fonte */
     }
 
-    /* Menu de navegação centralizado */
-    .navegação {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
+    /* Estilos para a navegação no mobile */
+    .navegação { 
+        display: flex; /* Usa flexbox */
+        gap: 1rem; /* Espaço entre itens */
+        justify-content: center; /* Centraliza itens horizontalmente */
     }
 
-    /* Botões sociais centralizados */
-    .btn-social {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
+    /* Estilos para os botões sociais no mobile */
+    .btn-social { 
+        display: flex; /* Usa flexbox */
+        gap: 1.5rem; /* Espaço entre botões */
+        justify-content: center; /* Centraliza botões horizontalmente */
     }
 
-    /* Ícones sociais ajustados */
-    .btn-social i {
-        font-size: 2rem; /* Tamanho aumentado para melhor toque */
+    /* Estilos para os ícones sociais no mobile */
+    .btn-social i { 
+        font-size: 2rem; /* Aumenta o tamanho do ícone */
+        color: #333; /* Cor do ícone */
     }
 
-    /* Slider responsivo para mobile */
-    .slider {
-        height: 45vw; /* Altura proporcional à largura */
+    /* Estilos para o slider no mobile */
+    .slider { 
+        height: 45vw; /* Altura proporcional à largura da viewport */
         min-height: 140px; /* Altura mínima */
         max-height: 200px; /* Altura máxima */
-        width: 100%;
-        margin: 1rem auto;
-        border-radius: 12px;
-        overflow: hidden;
+        width: 100%; /* Ocupa largura total */
+        margin: 1rem auto; /* Centraliza e adiciona margem vertical */
+        border-radius: 12px; /* Borda arredondada */
+        overflow: cover; /* Esconde conteúdo que transborda */
     }
 
     /* Imagens do slider */
     .slider img,
-    .slider .slide {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display: none;
+    .slider .slide { /* Estilos para as imagens e slides individuais do slider no mobile */
+        width: 100%; /* Ocupa largura total do contêiner */
+        height: 100%; /* Ocupa altura total do contêiner */
+        object-fit: cover; /* Faz a imagem cobrir o contêiner (pode cortar) */
+        display: none; /* Esconde slides por padrão (controlado por JS) */
     }
 
     /* Slide ativo visível */
     .slider .slide.active,
-    .slider img.active {
-        display: block;
+    .slider img.active { /* Estilos para o slide/imagem ativo no mobile */
+        display: block; /* Mostra o slide/imagem ativo */
     }
 
-    /* Grid de produtos em coluna única para mobile */
-    .products-grid {
-        display: grid;
-        grid-template-columns: 1fr; /* Uma coluna para mobile */
-        gap: 1.5rem;
-        padding: 1rem;
+    /* Estilos para o grid de produtos no mobile */
+    .products-grid { 
+        display: grid; /* Usa grid */
+        grid-template-columns: 1fr; /* Uma coluna por linha */
+        gap: 1.5rem; /* Espaço entre itens do grid */
+        padding: 1rem; /* Padding interno */
     }
 
-    /* Card do produto ajustado para mobile */
-    .product {
-        padding: 1rem;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    /* Estilos para cada card de produto no mobile */
+    .product { 
+        padding: 1rem; /* Padding interno */
+        border-radius: 12px; /* Borda arredondada */
+        text-align: center; /* Centraliza o texto */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra */
     }
 
-    /* Container de imagens do produto */
-    .product-images {
-        position: relative;
-        margin-bottom: 1rem;
+    /* Estilos para o contêiner de imagens dentro do card de produto no mobile */
+    .product-images { 
+        position: relative; /* Posição relativa para posicionar botões filhos */
+        margin-bottom: 1rem; /* Espaço abaixo */
     }
 
-    /* Imagem principal do produto */
-    .product-images img.main-img {
-        width: 100%;
-        object-fit: contain;
-        display: none;
+    /* Estilos para a imagem principal do produto no mobile */
+    .product-images img.main-img { 
+        width: 100%; /* Ocupa largura total */
+        object-fit: cover; /* Garante que a imagem caiba sem cortar */
+        display: none; /* Esconde por padrão (controlado por JS) */
     }
 
-    /* Imagem ativa visível */
-    .product-images img.main-img.active {
-        display: block;
+    /* Estilos para a imagem ativa do produto no mobile */
+    .product-images img.main-img.active { 
+        display: block; /* Mostra a imagem ativa */
     }
 
-    /* Botão do WhatsApp ajustado para mobile */
-    .whatsapp-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1rem;
-        border-radius: 25px;
-        font-size: 0.95rem;
-        margin-top: 1rem;
+    /* Estilos para o botão do WhatsApp no mobile */
+    .whatsapp-btn { 
+        display: inline-flex; /* Usa inline-flex */
+        align-items: center; /* Centraliza itens verticalmente */
+        gap: 0.5rem; /* Espaço entre ícone e texto */
+        padding: 0.75rem 1rem; /* Padding interno */
+        border-radius: 25px; /* Borda arredondada */
+        font-size: 0.95rem; /* Tamanho da fonte */
+        margin-top: 1rem; /* Espaço acima */
     }
 
     /* Seção Quem Somos ajustada para mobile */
-    .quem-somos {
-        padding: 2rem 1rem;
-        text-align: center;
-        margin-left: 0 !important; /* Remove margem esquerda para mobile */
-        margin-right: 0 !important; /* Remove margem direita para mobile */
-        width: 100% !important; /* Garante que ocupe a largura total */
-        box-sizing: border-box; /* Inclui padding na largura */
+    .quem-somos { 
+        padding: 2rem 1rem; /* Ajusta padding */
+        text-align: center; /* Centraliza texto */
+        margin-left: 0 !important; /* Remove margem esquerda */
+        margin-right: 0 !important; /* Remove margem direita */
+        width: 100% !important; /* Garante largura total */
+        box-sizing: border-box; /* Inclui padding e borda no tamanho */
     }
 
     /* Container da seção Quem Somos */
-    .quem-somos-container {
-        max-width: 95%;
-        margin: 0 auto;
-        padding: 1rem;
-        border-radius: 12px;
+    .quem-somos-container { 
+        max-width: 95%; /* Largura máxima */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        padding: 1rem; /* Padding interno */
+        border-radius: 12px; /* Borda arredondada */
     }
 
     /* Seção de pagamento e selos em coluna para mobile */
-    .pagamento-selos {
-        padding: 1rem; /* Ajusta padding para mobile */
-        margin-left: 0 !important; /* Remove margem esquerda para mobile */
-        margin-right: 0 !important; /* Remove margem direita para mobile */
-        width: 100% !important; /* Garante que o container ocupe a largura total */
-        box-sizing: border-box; /* Inclui padding na largura */
-        display: flex; /* Mantém display flex no container pai */
-        flex-direction: column !important; /* Força a direção da coluna */
-        gap: 1.5rem;
+    .pagamento-selos { 
+        padding: 1rem; /* Ajusta padding */
+        margin-left: 0 !important; /* Remove margem esquerda */
+        margin-right: 0 !important; /* Remove margem direita */
+        width: 100% !important; /* Garante largura total */
+        box-sizing: border-box; /* Inclui padding e borda no tamanho */
+        display: flex; /* Usa flexbox */
+        flex-direction: column !important; /* Força organização em coluna */
+        gap: 1.5rem; /* Espaço entre itens */
     }
 
     /* Containers internos (.container e .row) dentro de .pagamento-selos */
     .pagamento-selos .container,
-    .pagamento-selos .row {
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0 auto !important; /* Centraliza o container/row se o pai for flex/grid */
-        display: block !important;
+    .pagamento-selos .row { 
+        width: 100% !important; /* Garante largura total */
+        padding: 0 !important; /* Remove padding */
+        margin: 0 auto !important; /* Centraliza horizontalmente */
+        display: block !important; /* Força display block */
     }
 
     /* Containers de pagamento e selos ocupando a largura total, centralizados e se comportando como blocos */
     .pagamento,
-    .selos {
-        display: block !important;
-        width: 100% !important;
-        max-width: none !important;
-        padding: 1rem !important;
-        border-radius: 12px;
-        box-sizing: border-box;
-        margin: 0 auto 1.5rem auto !important; /* Centraliza e adiciona espaço abaixo */
+    .selos { 
+        display: block !important; /* Força display block */
+        width: 100% !important; /* Garante largura total */
+        max-width: none !important; /* Remove largura máxima fixa */
+        padding: 1rem !important; /* Ajusta padding */
+        border-radius: 12px; /* Borda arredondada */
+        box-sizing: border-box; /* Inclui padding e borda no tamanho */
+        margin: 0 auto 1.5rem auto !important; /* Centraliza e adiciona margem inferior */
     }
 
     /* Remove a margem inferior do último item para evitar espaço extra */
-    .pagamento-selos .selos:last-child {
-        margin-bottom: 0 !important;
+    .pagamento-selos .selos:last-child { 
+        margin-bottom: 0 !important; /* Remove margem inferior */
     }
 
     /* Ajustes específicos para elementos dentro de pagamento e selos se necessário */
-    .pagamento h2, .selos h2 {
-      text-align: center !important;
+    .pagamento h2, .selos h2 { 
+      text-align: center !important; /* Centraliza texto */
     }
-    .pagamento ul, .selos ul {
-      justify-content: center !important;
-      display: flex !important;
-      flex-wrap: wrap !important;
+
+    /* Ajustes para listas de itens (bandeiras/selos) no mobile */
+    .pagamento ul, .selos ul { 
+      justify-content: center !important; /* Centraliza itens horizontalmente */
+      display: flex !important; /* Usa flexbox */
+      flex-wrap: wrap !important; /* Permite quebra de linha */
     }
-    .pagamento ul li, .selos ul li {
-      flex: 0 0 auto !important;
-      margin: 0.25rem !important;
+
+    /* Ajustes para cada item da lista (bandeira/selo) no mobile */
+    .pagamento ul li, .selos ul li { 
+      flex: 0 0 auto !important; /* Impede que os itens cresçam ou diminuam */
+      margin: 0.25rem !important; /* Adiciona uma pequena margem entre os itens */
     }
 
     /* Rodapé ajustado para mobile */
-    footer {
-        padding: 20px 1rem !important; /* Ajusta padding e usa rem */
+    footer { /* Estilos para o rodapé no mobile */
+        padding: 20px 1rem !important; /* Ajusta padding */
         margin: 0 !important; /* Remove todas as margens */
         width: 100% !important; /* Garante largura total */
-        max-width: none !important; /* Remove limite de largura máxima */
-        box-sizing: border-box; /* Inclui padding na largura */
+        max-width: none !important; /* Remove largura máxima fixa */
+        box-sizing: border-box; /* Inclui padding e borda no tamanho */
         text-align: center !important; /* Centraliza texto */
     }
 
     /* Texto do rodapé centralizado */
-    footer p {
+    footer p { /* Estilos para o parágrafo dentro do rodapé no mobile */
         text-align: center !important; /* Garante texto centralizado */
-        margin: 0 !important; /* Remove margens do parágrafo */
-        padding: 0 !important; /* Remove padding do parágrafo */
+        margin: 0 !important; /* Remove margens */
+        padding: 0 !important; /* Remove padding */
     }
-}
+} 
 
 /* Tablet (481px - 768px) - Ajustes para telas médias */
+/* Grid de produtos em duas colunas para tablet */
 @media (min-width: 481px) and (max-width: 768px) {
-    /* Grid de produtos em duas colunas para tablet */
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas por linha */
     }
 
     /* Slider ajustado para tablet */
     .slider {
-        height: 40vw;
-        min-height: 200px;
-        max-height: 300px;
+        height: 40vw; /* Altura proporcional à largura da viewport */
+        min-height: 200px; /* Altura mínima */
+        max-height: 300px; /* Altura máxima */
     }
 
     /* Imagens do produto ajustadas para tablet */
     .product-images img.main-img {
-        height: 220px;
+        height: 220px; /* Altura fixa para tablet */
     }
 }
 
 /* Desktop (769px - 1024px) - Ajustes para telas grandes */
+/* Grid de produtos em três colunas para desktop */
 @media (min-width: 769px) {
-    /* Grid de produtos em três colunas para desktop */
     .products-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Três colunas por linha */
     }
 
     /* Slider ajustado para desktop */
     .slider {
-        height: 35vw;
-        min-height: 300px;
-        max-height: 400px;
+        height: 35vw; /* Altura proporcional à largura da viewport */
+        min-height: 300px; /* Altura mínima */
+        max-height: 400px; /* Altura máxima */
     }
 
     /* Imagens do produto ajustadas para desktop */
     .product-images img.main-img {
-        height: 250px;
+        height: 250px; /* Altura fixa para desktop */
     }
 }
 
 /* Large Desktop (1025px+) - Ajustes para telas muito grandes */
+/* Grid de produtos em quatro colunas para telas grandes */
 @media (min-width: 1025px) {
-    /* Grid de produtos em quatro colunas para telas grandes */
     .products-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* Quatro colunas por linha */
     }
 
     /* Slider ajustado para telas grandes */
     .slider {
-        height: 30vw;
-        min-height: 400px;
-        max-height: 500px;
+        height: 30vw; /* Altura proporcional à largura da viewport */
+        min-height: 400px; /* Altura mínima */
+        max-height: 500px; /* Altura máxima */
     }
 
     /* Imagens do produto ajustadas para telas grandes */
     .product-images img.main-img {
-        height: 280px;
+        height: 280px; /* Altura fixa para telas grandes */                                                                                             
     }
 }
 
 /* Navegação de imagens do produto - Estilos comuns para todos os breakpoints */
 .product-images .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    position: absolute; /* Posicionamento absoluto */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco com 80% opacidade */
+    border: none; /* Remove borda */
+    border-radius: 50%; /* Borda arredondada */
+    width: 32px; /* Largura fixa */
+    height: 32px; /* Altura fixa */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centraliza itens verticalmente */
+    justify-content: center; /* Centraliza itens horizontalmente */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s; /* Transição suave */
+    margin: 0 !important; /* Remove margem */
+    padding: 0 !important; /* Remove padding */
+    z-index: 1; /* Z-index para garantir que esteja acima do conteúdo */
 }
 
 /* Efeito hover nos botões de navegação */
 .product-images .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95); /* Fundo branco com 95% opacidade ao passar o mouse */
 }
 
 /* Posicionamento dos botões de navegação */
-.product-images .prev-btn { left: 8px; }
-.product-images .next-btn { right: 8px; } 
+.product-images .prev-btn { left: 8px; } /* Botão de navegação anterior */
+.product-images .next-btn { right: 8px; } /* Botão de navegação posterior */ 
