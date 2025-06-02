@@ -74,9 +74,9 @@
 
     /* Estilos para o slider no mobile */
     .slider { 
-        height: 60vw; /* Altura proporcional à largura da viewport */
+        height: 60vw; /* Altura proporcional à largura da viewport - AUMENTADO */
         min-height: 140px; /* Altura mínima */
-        max-height: 200px; /* Altura máxima */
+        max-height: 250px; /* Altura máxima - AUMENTADO */
         width: 100%; /* Ocupa largura total */
         margin: 1rem auto; /* Centraliza e adiciona margem vertical */
         border-radius: 12px; /* Borda arredondada */
@@ -284,7 +284,7 @@
 
     /* Imagens do produto ajustadas para desktop */
     .product-images img.main-img {
-        height: 280px; /* Aumentei a altura para desktop */
+        height: 300px; /* Altura fixa para desktop - AUMENTADO */
     }
 
     /* Card individual do produto (ajuste para flexbox) */
@@ -317,7 +317,7 @@
 
     /* Imagens do produto ajustadas para telas grandes */
     .product-images img.main-img {
-        height: 320px; /* Aumentei a altura para telas grandes */
+        height: 350px; /* Altura fixa para telas grandes - AUMENTADO */
     }
 
     /* Card individual do produto (ajuste para flexbox) */
