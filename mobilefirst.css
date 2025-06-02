@@ -14,31 +14,81 @@
 /* Mobile (até 480px) */
 @media (max-width: 480px) {
     body {
-        font-size: 14px; /* Reduz tamanho da fonte para mobile */
+        font-size: 14px;
     }
 
     header {
-        flex-direction: column !important; /* Empilha os itens */
-        align-items: center !important;    /* Centraliza */
-        gap: 12px !important;              /* Espaço entre itens */
-        padding: 1.5rem 0.5rem !important; /* Reduz padding do header */
-        text-align: center !important;     /* Centraliza conteúdo */
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        padding: 2rem 1rem !important;
+        text-align: center !important;
+        background: #fff !important;
     }
 
     .logo {
-        font-size: 1.3rem;         /* Ajusta tamanho da logo */
-        margin-bottom: 0.3rem;     /* Espaçamento inferior */
-        text-align: center;        /* Centraliza logo */
-        max-width: 100%;           /* Limita largura */
-        width: 100% !important;    /* Garante largura total */
-        justify-content: center !important; /* Centraliza flex */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .logo img {
+        width: 180px !important;
+        height: 180px !important;
+        object-fit: contain !important;
+    }
+
+    .logo a {
+        color: #333 !important;
+        text-decoration: none !important;
+        font-size: 1.8rem !important;
+        font-weight: 500 !important;
+        margin-top: 10px !important;
     }
 
     .navegação {
-        flex-direction: column !important; /* Menu em coluna */
+        flex-direction: column !important;
         align-items: center !important;
-        gap: 8px !important;
+        gap: 15px !important;
         width: 100% !important;
+        margin-top: 1rem !important;
+    }
+
+    .navegação a {
+        color: #333 !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .navegação a:hover {
+        color: #666 !important;
+    }
+
+    .btn-social {
+        display: flex !important;
+        gap: 20px !important;
+        margin-top: 1.5rem !important;
+        justify-content: center !important;
+    }
+
+    .btn-social button {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        cursor: pointer !important;
+    }
+
+    .btn-social i {
+        font-size: 1.8rem !important;
+        color: #333 !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .btn-social i:hover {
+        color: #666 !important;
     }
 
     .slider {
@@ -133,32 +183,44 @@
 
 /* Tablet (481px a 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-    body {
-        font-size: 16px;          /* Aumenta fonte para tablet */
-    }
-
     header {
-        flex-direction: row !important; /* Itens em linha */
+        flex-direction: column !important;
         align-items: center !important;
-        justify-content: space-between !important;
-        gap: 16px !important;
-        padding: 2rem !important;            /* Aumenta padding */
-        text-align: left !important;
+        gap: 25px !important;
+        padding: 2.5rem !important;
     }
 
     .logo {
-        font-size: 2rem;          /* Aumenta logo */
-        text-align: left;         /* Alinha à esquerda */
-        letter-spacing: 1.2px;    /* Espaçamento entre letras */
-        width: auto !important;
-        margin-bottom: 0 !important;
+        gap: 15px !important;
+    }
+
+    .logo img {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .logo a {
+        font-size: 2rem !important;
     }
 
     .navegação {
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 16px !important;
-        width: auto !important;
+        gap: 20px !important;
+    }
+
+    .navegação a {
+        font-size: 1.2rem !important;
+    }
+
+    .btn-social {
+        gap: 25px !important;
+    }
+
+    .btn-social i {
+        font-size: 2rem !important;
+    }
+
+    body {
+        font-size: 16px;          /* Aumenta fonte para tablet */
     }
 
     .slider {
@@ -235,31 +297,42 @@
 
 /* Desktop (769px a 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    body {
-        font-size: 18px;          /* Aumenta fonte para desktop */
-    }
-
     header {
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 20px !important;
-        padding: 3rem !important;            /* Aumenta padding */
-        text-align: left !important;
+        padding: 3rem !important;
+        gap: 30px !important;
     }
 
     .logo {
-        font-size: 2.5rem;        /* Aumenta logo */
-        text-align: left;
-        width: auto !important;
-        margin-bottom: 0 !important;
+        gap: 20px !important;
+    }
+
+    .logo img {
+        width: 220px !important;
+        height: 220px !important;
+    }
+
+    .logo a {
+        font-size: 2.2rem !important;
     }
 
     .navegação {
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 20px !important;
-        width: auto !important;
+        gap: 25px !important;
+    }
+
+    .navegação a {
+        font-size: 1.3rem !important;
+    }
+
+    .btn-social {
+        gap: 30px !important;
+    }
+
+    .btn-social i {
+        font-size: 2.2rem !important;
+    }
+
+    body {
+        font-size: 18px;          /* Aumenta fonte para desktop */
     }
 
     .slider {
@@ -336,31 +409,42 @@
 
 /* Large Desktop (acima de 1024px) */
 @media (min-width: 1025px) {
-    body {
-        font-size: 20px;          /* Aumenta fonte para telas grandes */
-    }
-
     header {
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 24px !important;
-        padding: 4rem !important;            /* Aumenta padding */
-        text-align: left !important;
+        padding: 4rem !important;
+        gap: 35px !important;
     }
 
     .logo {
-        font-size: 3rem;          /* Aumenta logo */
-        text-align: left;
-        width: auto !important;
-        margin-bottom: 0 !important;
+        gap: 25px !important;
+    }
+
+    .logo img {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    .logo a {
+        font-size: 2.5rem !important;
     }
 
     .navegação {
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 24px !important;
-        width: auto !important;
+        gap: 30px !important;
+    }
+
+    .navegação a {
+        font-size: 1.4rem !important;
+    }
+
+    .btn-social {
+        gap: 35px !important;
+    }
+
+    .btn-social i {
+        font-size: 2.5rem !important;
+    }
+
+    body {
+        font-size: 20px;          /* Aumenta fonte para telas grandes */
     }
 
     .slider {
