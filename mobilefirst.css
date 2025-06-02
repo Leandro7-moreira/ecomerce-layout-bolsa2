@@ -175,21 +175,21 @@
     /* Containers internos (.container e .row) dentro de .pagamento-selos */
     .pagamento-selos .container,
     .pagamento-selos .row {
-        width: 100% !important; /* Garante que ocupem a largura total */
-        padding: 0 !important; /* Remove padding interno se houver */
-        margin: 0 !important; /* Remove margem interna se houver */
-        display: block !important; /* Força display block para anular flex/grid */
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important; /* Centraliza o container/row se o pai for flex/grid */
+        display: block !important;
     }
 
-    /* Containers de pagamento e selos ocupando a largura total e se comportando como blocos */
+    /* Containers de pagamento e selos ocupando a largura total, centralizados e se comportando como blocos */
     .pagamento,
     .selos {
-        display: block !important; /* Força display block para empilhar */
-        width: 100% !important; /* Força a largura total */
-        max-width: none !important; /* Garante que a largura fixa seja anulada */
-        padding: 1rem !important; /* Ajusta padding interno */
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 1rem !important;
         border-radius: 12px;
-        box-sizing: border-box; /* Garante que padding não cause overflow */
+        box-sizing: border-box;
         margin: 0 auto 1.5rem auto !important; /* Centraliza e adiciona espaço abaixo */
     }
 
@@ -210,6 +210,23 @@
     .pagamento ul li, .selos ul li {
       flex: 0 0 auto !important;
       margin: 0.25rem !important;
+    }
+
+    /* Rodapé ajustado para mobile */
+    footer {
+        padding: 20px 1rem !important; /* Ajusta padding e usa rem */
+        margin: 0 !important; /* Remove todas as margens */
+        width: 100% !important; /* Garante largura total */
+        max-width: none !important; /* Remove limite de largura máxima */
+        box-sizing: border-box; /* Inclui padding na largura */
+        text-align: center !important; /* Centraliza texto */
+    }
+
+    /* Texto do rodapé centralizado */
+    footer p {
+        text-align: center !important; /* Garante texto centralizado */
+        margin: 0 !important; /* Remove margens do parágrafo */
+        padding: 0 !important; /* Remove padding do parágrafo */
     }
 }
 
