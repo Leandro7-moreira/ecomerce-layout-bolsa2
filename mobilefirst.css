@@ -146,6 +146,8 @@
     .quem-somos {
         padding: 2rem 1rem;
         text-align: center;
+        margin-left: 0; /* Remove margem esquerda para mobile */
+        margin-right: 0; /* Remove margem direita para mobile */
     }
 
     /* Container da seção Quem Somos */
