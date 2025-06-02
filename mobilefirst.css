@@ -146,8 +146,10 @@
     .quem-somos {
         padding: 2rem 1rem;
         text-align: center;
-        margin-left: 0; /* Remove margem esquerda para mobile */
-        margin-right: 0; /* Remove margem direita para mobile */
+        margin-left: 0 !important; /* Remove margem esquerda para mobile */
+        margin-right: 0 !important; /* Remove margem direita para mobile */
+        width: 100% !important; /* Garante que ocupe a largura total */
+        box-sizing: border-box; /* Inclui padding na largura */
     }
 
     /* Container da seção Quem Somos */
@@ -160,12 +162,23 @@
 
     /* Seção de pagamento e selos em coluna para mobile */
     .pagamento-selos {
-        display: flex; /* Mantém display flex no container pai para gap e padding */
+        padding: 1rem; /* Ajusta padding para mobile */
+        margin-left: 0 !important; /* Remove margem esquerda para mobile */
+        margin-right: 0 !important; /* Remove margem direita para mobile */
+        width: 100% !important; /* Garante que o container ocupe a largura total */
+        box-sizing: border-box; /* Inclui padding na largura */
+        display: flex; /* Mantém display flex no container pai */
         flex-direction: column !important; /* Força a direção da coluna */
         gap: 1.5rem;
-        padding: 1rem;
-        width: 100%; /* Garante que o container ocupe a largura total */
-        box-sizing: border-box; /* Inclui padding na largura */
+    }
+
+    /* Containers internos (.container e .row) dentro de .pagamento-selos */
+    .pagamento-selos .container,
+    .pagamento-selos .row {
+        width: 100% !important; /* Garante que ocupem a largura total */
+        padding: 0 !important; /* Remove padding interno se houver */
+        margin: 0 !important; /* Remove margem interna se houver */
+        display: block !important; /* Força display block para anular flex/grid */
     }
 
     /* Containers de pagamento e selos ocupando a largura total e se comportando como blocos */
@@ -173,15 +186,30 @@
     .selos {
         display: block !important; /* Força display block para empilhar */
         width: 100% !important; /* Força a largura total */
-        padding: 1rem;
+        max-width: none !important; /* Garante que a largura fixa seja anulada */
+        padding: 1rem !important; /* Ajusta padding interno */
         border-radius: 12px;
         box-sizing: border-box; /* Garante que padding não cause overflow */
-        margin-bottom: 1.5rem; /* Adiciona espaço entre eles quando empilhados */
+        margin: 0 auto 1.5rem auto !important; /* Centraliza e adiciona espaço abaixo */
     }
 
     /* Remove a margem inferior do último item para evitar espaço extra */
     .pagamento-selos .selos:last-child {
         margin-bottom: 0 !important;
+    }
+
+    /* Ajustes específicos para elementos dentro de pagamento e selos se necessário */
+    .pagamento h2, .selos h2 {
+      text-align: center !important;
+    }
+    .pagamento ul, .selos ul {
+      justify-content: center !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+    }
+    .pagamento ul li, .selos ul li {
+      flex: 0 0 auto !important;
+      margin: 0.25rem !important;
     }
 }
 
