@@ -86,7 +86,7 @@
     .slider .slide {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         display: none;
     }
 
@@ -121,7 +121,6 @@
     /* Imagem principal do produto */
     .product-images img.main-img {
         width: 100%;
-        height: 180px; /* Altura fixa para mobile */
         object-fit: contain;
         display: none;
     }
