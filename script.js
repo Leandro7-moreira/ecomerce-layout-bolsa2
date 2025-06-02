@@ -65,3 +65,26 @@ scrollToTopBtn.onclick = function() {
     });
 };
 
+// Função para abrir o link do WhatsApp com a imagem e descrição do produto
+function contactWhatsApp(img, desc) {
+  // Número de telefone do contato (formato internacional, sem espaços ou símbolos)
+  const phoneNumber = "5518991252162"; // Substitua pelo número desejado
+
+  const basePath = "https://leandro7-moreira.github.io/ecomerce-esporte/"; // Substitua pelo nome do seu repositório
+
+  // Gera o URL completo da imagem
+  const imageUrl = `${basePath}/${img}`;
+  
+  // Cria a mensagem com a descrição e o link da imagem
+  const message = `Olá, gostaria de mais informações sobre este produto:\n\n${desc}\n\nVeja a imagem: ${imageUrl}`;
+  
+  // Codifica a mensagem para ser usada na URL
+  const encodedMessage = encodeURIComponent(message);
+  
+  // Gera o link do WhatsApp com o número e a mensagem
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
+  // Abre o link em uma nova aba
+  window.open(whatsappUrl, '_blank');
+}
+
