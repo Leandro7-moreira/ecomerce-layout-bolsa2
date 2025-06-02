@@ -1,910 +1,260 @@
-/* 
- * Mobile First CSS - Apenas media queries
- * Este arquivo contém apenas as media queries para responsividade
- * Importe após o style.css
- * 
- * Observações importantes:
- * - Este arquivo deve ser importado APÓS o style.css
- * - Contém apenas ajustes responsivos, não duplica estilos base
- * - Breakpoints: 480px (mobile), 768px (tablet), 1024px (desktop), 1440px (large desktop)
+/*
+ * Mobile First CSS - Ajustes de layout responsivo
+ * Baseado em exemplo conciso, focado nas media queries para classes existentes no HTML.
+ * Importe após o style.css.
+ *
+ * Breakpoints: 480px (mobile), 768px (tablet), 1024px (desktop)
  */
 
 /* ===== MEDIA QUERIES ===== */
 
-/* Mobile (até 480px) */
-/* Início das regras para telas de até 480px (Mobile) */
-@media (max-width: 480px) { 
-    html, body { /* Ajustes gerais para o corpo da página */
-        max-width: 100vw; /* Impede rolagem horizontal */
-        overflow-x: hidden; /* Oculta qualquer conteúdo que transborde horizontalmente */
-        font-size: 14px; /* Define o tamanho da fonte base para mobile */
+/* Mobile (até 480px) - Ajustes para telas pequenas */
+@media (max-width: 480px) {
+    /* Configurações base do body para evitar scroll horizontal */
+    body {
+        font-size: 14px; /* Tamanho base da fonte reduzido para mobile */
+        overflow-x: hidden; /* Evita scroll horizontal */
+        max-width: 100vw; /* Limita largura à viewport */
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
     }
 
-    /* Ajustes adicionais para o corpo */
-    body { 
-        padding: 0 !important; /* Remove padding do body */
-        margin: 0 !important; /* Remove margin do body */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
+    /* Header reorganizado em coluna para mobile */
+    header {
+        padding: 1rem; /* Reduz padding para economizar espaço */
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Empilha elementos verticalmente */
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
     }
 
-    /* Estilos para o cabeçalho */
-    header { 
-        align-items: center !important; /* Centraliza itens verticalmente */
-        justify-content: center !important; /* Centraliza itens horizontalmente */
-        margin: 0 auto !important; /* Centraliza o header */
-        width: 100vw !important; /* Ocupa toda a largura da viewport */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
+    /* Logo centralizada e ajustada para mobile */
+    .logo {
+        display: flex;
+        flex-direction: column; /* Empilha logo e texto */
+        align-items: center;
+        gap: 0.5rem;
     }
 
-    /* Estilos para o contêiner da logo (imagem + texto) */
-    .logo { 
-        align-items: center !important; /* Centraliza itens verticalmente */
-        justify-content: center !important; /* Centraliza itens horizontalmente */
-        margin: 0 auto !important; /* Centraliza o contêiner da logo */
-        width: 100vw !important; /* Ocupa toda a largura da viewport */
+    /* Imagem do logo ajustada para mobile */
+    .logo img {
+        width: 120px; /* Tamanho reduzido para mobile */
+        height: 120px;
+        object-fit: contain;
     }
 
-    /* Estilos para a imagem da logo */
-    .logo img { 
-        width: 120px !important; /* Define a largura da imagem */
-        height: 120px !important; /* Define a altura da imagem */
-        object-fit: contain !important; /* Redimensiona a imagem para caber no contêiner mantendo a proporção */
-        margin: 0 auto 8px auto !important; /* Centraliza a imagem e adiciona margem inferior */
+    /* Texto do logo ajustado para mobile */
+    .logo a {
+        font-size: 1.3rem; /* Fonte reduzida para mobile */
     }
 
-    /* Estilos para o texto da logo */
-    .logo a { 
-        font-size: 1.3rem !important; /* Ajusta o tamanho da fonte do texto da logo */
-        margin-top: 6px !important; /* Adiciona margem superior ao texto da logo */
+    /* Menu de navegação centralizado */
+    .navegação {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
     }
 
-    /* Estilos para o contêiner do slider */
-    .slider { 
-        width: 100vw !important; /* Ocupa toda a largura da viewport */
-        max-width: 100vw !important; /* Garante que não ultrapasse a largura da viewport */
-        height: 38vw !important; /* Define a altura proporcional à largura (retangular horizontal) */
-        min-height: 120px !important; /* Altura mínima do slider */
-        max-height: 180px !important; /* Altura máxima do slider */
-        margin: 10px auto 0 auto !important; /* Centraliza o slider horizontalmente */
-        overflow: hidden !important; /* Oculta conteúdo que transborde (imagens fora de vista) */
-        position: relative !important; /* Define posição relativa para posicionar slides internos */
-        background: transparent !important; /* Fundo transparente */
-        border-radius: 18px !important; /* Borda arredondada */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
+    /* Botões sociais centralizados */
+    .btn-social {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
     }
 
-    /* Estilos para as imagens e slides individuais do slider */
+    /* Ícones sociais ajustados */
+    .btn-social i {
+        font-size: 2rem; /* Tamanho aumentado para melhor toque */
+    }
+
+    /* Slider responsivo para mobile */
+    .slider {
+        height: 45vw; /* Altura proporcional à largura */
+        min-height: 140px; /* Altura mínima */
+        max-height: 200px; /* Altura máxima */
+        width: 100%;
+        margin: 1rem auto;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* Imagens do slider */
     .slider img,
-    .slider .slide { 
-        width: 100vw !important; /* Ocupa toda a largura da viewport */
-        max-width: 100vw !important; /* Garante que não ultrapasse a largura */
-        height: 100% !important; /* Ocupa 100% da altura do contêiner do slider */
-        min-height: 120px !important; /* Altura mínima das imagens */
-        max-height: 180px !important; /* Altura máxima das imagens */
-        object-fit: cover !important; /* Redimensiona a imagem para cobrir o contêiner sem distorcer */
-        display: none !important; /* Esconde os slides por padrão (exceto o ativo) */
-        position: absolute !important; /* Posiciona slides absolutamente dentro do slider */
-        left: 0 !important; /* Alinha à esquerda */
-        top: 0 !important; /* Alinha ao topo */
-        border-radius: 18px !important; /* Borda arredondada */
+    .slider .slide {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
     }
 
-    /* Estilos para o slide/imagem ativo */
+    /* Slide ativo visível */
     .slider .slide.active,
-    .slider img.active { 
-        display: block !important; /* Exibe o slide ativo */
-        position: relative !important; /* Posição relativa para o slide ativo (opcional dependendo do JS) */
-        z-index: 2 !important; /* Garante que o slide ativo fique acima dos outros */
+    .slider img.active {
+        display: block;
     }
 
-    /* Estilos para a lista de navegação */
-    .navegação { 
-        flex-direction: row !important; /* Organiza itens em linha */
-        justify-content: center !important; /* Centraliza itens horizontalmente */
-        align-items: center !important; /* Centraliza itens verticalmente */
-        gap: 18px !important; /* Espaçamento entre os itens de navegação */
-        width: 100vw !important; /* Ocupa toda a largura da viewport */
-        margin: 0 auto !important; /* Centraliza a navegação */
+    /* Grid de produtos em coluna única para mobile */
+    .products-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Uma coluna para mobile */
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
-    /* Estilos para cada item da lista de navegação */
-    .navegação li { 
-        display: inline-block !important; /* Exibe como bloco inline (lado a lado) */
-        margin: 0 !important; /* Remove margens padrão */
+    /* Card do produto ajustado para mobile */
+    .product {
+        padding: 1rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* Estilos para o contêiner dos botões sociais */
-    .btn-social { 
-        gap: 28px !important; /* Espaçamento entre os botões */
-        margin-top: 1.2rem !important; /* Margem superior */
-        justify-content: center !important; /* Centraliza os botões */
+    /* Container de imagens do produto */
+    .product-images {
+        position: relative;
+        margin-bottom: 1rem;
     }
 
-    /* Tamanho maior para os ícones */
-    .btn-social i { 
-        font-size: 2.1rem !important; /* Tamanho maior para os ícones */
-        color: #333 !important; /* Define a cor dos ícones */
+    /* Imagem principal do produto */
+    .product-images img.main-img {
+        width: 100%;
+        height: 180px; /* Altura fixa para mobile */
+        object-fit: contain;
+        display: none;
     }
 
-    /* Estilos para os links dos botões sociais */
-    .btn-social a { 
-        color: #333 !important; /* Define a cor dos links (remove azul padrão) */
+    /* Imagem ativa visível */
+    .product-images img.main-img.active {
+        display: block;
     }
 
-    /* Estilos para as imagens principais dos produtos (usada em .product-images) */
-    /* Oculta imagens não ativas para funcionalidade do slider interno */
-    .product-images img.main-img { 
-        display: none !important; /* Esconde por padrão */
+    /* Botão do WhatsApp ajustado para mobile */
+    .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        margin-top: 1rem;
     }
 
-    /* Mostra a imagem ativa */
-    .product-images img.main-img.active { 
-        display: block !important; /* Mostra a imagem ativa */
+    /* Seção Quem Somos ajustada para mobile */
+    .quem-somos {
+        padding: 2rem 1rem;
+        text-align: center;
     }
 
-    /* Estilos para o contêiner interno da seção "Quem Somos" */
-    /* Ajustes para tornar o contêiner mais retangular no mobile */
-    .quem-somos-container { 
-        max-width: 95vw !important; /* Largura máxima */
-        width: 95vw !important; /* Largura */
-        padding: 18px 18px !important; /* Padding interno aumentado */
-        margin: 0 auto !important; /* Centraliza horizontalmente */
-        border-radius: 16px !important; /* Borda arredondada */
-        text-align: center !important; /* Centraliza texto */
-        font-size: 1.05rem !important; /* Tamanho da fonte ajustado */
-        line-height: 1.5 !important; /* Altura da linha ajustada */
-        word-break: break-word !important; /* Quebra de texto para evitar overflow */
+    /* Container da seção Quem Somos */
+    .quem-somos-container {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 1rem;
+        border-radius: 12px;
     }
 
-    /* Estilos para o grid de produtos */
-    .products-grid { 
-        display: flex !important; /* Usa flexbox para organizar produtos */
-        flex-direction: column !important; /* Organiza produtos em coluna */
-        gap: 18px !important; /* Espaçamento entre produtos */
-        padding: 10px 0 !important; /* Padding vertical */
-        width: 100% !important; /* Ocupa toda a largura */
-        margin: 0 auto !important; /* Centraliza o grid */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
+    /* Seção de pagamento e selos em coluna */
+    .pagamento-selos {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
-    /* Estilos para cada card de produto individual */
-    .product { 
-        min-height: unset !important; /* Remove altura mínima fixa */
-        padding-bottom: 12px !important; /* Padding inferior */
-        padding-top: 12px !important; /* Padding superior */
-        padding-left: 8px !important; /* Padding esquerdo */
-        padding-right: 8px !important; /* Padding direito */
-        margin-bottom: 18px !important; /* Margem inferior entre produtos */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important; /* Sombra suave */
+    /* Containers de pagamento e selos */
+    .pagamento,
+    .selos {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 12px;
     }
-
-    /* Estilos para a imagem principal dentro do card do produto */
-    .product-images img.main-img { 
-        height: 150px !important; /* Altura da imagem */
-        width: 100% !important; /* Largura da imagem */
-        object-fit: contain !important; /* Redimensiona a imagem para caber no contêiner mantendo a proporção */
-        display: block !important; /* Exibe como bloco */
-        margin: 0 auto 8px !important; /* Centraliza a imagem e adiciona margem inferior */
-    }
-
-    .quem-somos { /* Estilos para a seção "Quem Somos" */
-        margin-left: 0 !important; /* Remove margem esquerda */
-        margin-right: 0 !important; /* Remove margem direita */
-        width: 100% !important; /* Ocupa toda a largura */
-        padding: 18px 8px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-    }
-    .quem-somos-container { /* Estilos para o contêiner interno da seção "Quem Somos" */
-        width: 100% !important; /* Ocupa toda a largura do pai */
-        padding: 8px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-    }
-
-    .pagamento-selos { /* Estilos para o contêiner principal de pagamento e selos */
-        margin: 0 auto !important; /* Centraliza horizontalmente */
-        width: 100% !important; /* Ocupa toda a largura */
-        max-width: 100vw !important; /* Garante que não ultrapasse a largura da viewport */
-        padding: 12px 8px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-    }
-    .container, .row { /* Estilos para contêineres genéricos e linhas (usados em pagamento/selos) */
-        flex-direction: column !important; /* Organiza itens em coluna */
-        align-items: center !important; /* Centraliza itens */
-        gap: 10px !important; /* Espaçamento entre itens */
-        width: 100% !important; /* Ocupa toda a largura */
-        margin: 0 auto !important; /* Centraliza horizontalmente */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-    }
-    .pagamento, .selos { /* Estilos para os blocos individuais de pagamento e selos */
-        width: 100% !important; /* Ocupa toda a largura do pai */
-        max-width: 95vw !important; /* Limita a largura para ser retangular */
-        min-width: unset !important; /* Remove largura mínima fixa */
-        margin: 0 auto 12px auto !important; /* Centraliza e adiciona margem inferior */
-        padding: 18px 12px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-        border-radius: 14px !important; /* Borda arredondada */
-    }
-
-    .whatsapp-btn { /* Estilos para o botão do WhatsApp */
-        margin-bottom: 0 !important; /* Remove margem inferior */
-    }
-
-    /* Centraliza texto do rodapé */
-    footer p { /* Estilos para o parágrafo do rodapé */
-        text-align: center !important; /* Centraliza texto */
-        margin: 0 auto !important; /* Centraliza o parágrafo */
-        padding: 10px 0 !important; /* Padding vertical */
-        width: 100% !important; /* Ocupa toda a largura */
-    }
-} /* Fim das regras para telas de até 480px (Mobile) */
-
-/* Tablet (481px a 768px) */
-@media (min-width: 481px) and (max-width: 768px) { /* Início das regras para telas de Tablet */
-    html, body { /* Ajustes gerais */
-        max-width: 100vw; /* Impede rolagem horizontal */
-        overflow-x: hidden; /* Oculta transbordamento horizontal */
-        font-size: 16px; /* Tamanho da fonte base para tablet */
-    }
-
-    header { /* Estilos para o cabeçalho */
-        flex-direction: column !important; /* Organiza itens em coluna */
-        align-items: center !important; /* Centraliza itens */
-        gap: 24px !important; /* Espaçamento entre itens */
-        padding: 2rem 1.5rem !important; /* Padding interno */
-        text-align: center !important; /* Centraliza texto */
-        width: 100% !important; /* Ocupa toda a largura */
-        box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-    }
-
-    .logo { /* Estilos para o contêiner da logo */
-        gap: 16px !important; /* Espaçamento entre imagem e texto */
-        width: 100% !important; /* Ocupa toda a largura */
-        margin: 0 auto !important; /* Centraliza */
-        font-size: 1.8rem !important; /* Tamanho da fonte */
-    }
-
-    .logo img { /* Estilos para a imagem da logo */
-        width: 140px !important; /* Largura da imagem */
-        height: 140px !important; /* Altura da imagem */
-        object-fit: contain !important; /* Redimensiona para caber */
-    }
-
-    .logo a { /* Estilos para o texto da logo */
-        font-size: 1.7rem !important; /* Tamanho da fonte */
-    }
-
-    .navegação { /* Estilos para a lista de navegação */
-        flex-direction: row !important; /* Organiza itens em linha */
-        justify-content: center !important; /* Centraliza itens */
-        align-items: center !important; /* Centraliza itens */
-        gap: 20px !important; /* Espaçamento entre itens */
-        width: 100% !important; /* Ocupa toda a largura */
-        margin-top: 0.8rem !important; /* Margem superior */
-    }
-
-     .navegação li { /* Estilos para cada item da lista de navegação */
-        display: inline-block !important; /* Exibe como bloco inline */
-        margin: 0 !important; /* Remove margens */
-    }
-
-    .navegação a { /* Estilos para os links de navegação */
-         font-size: 1.15rem !important; /* Tamanho da fonte */
-    }
-
-    .btn-social { /* Estilos para o contêiner dos botões sociais */
-        gap: 24px !important; /* Espaçamento entre botões */
-        margin-top: 1.5rem !important; /* Margem superior */
-        justify-content: center !important; /* Centraliza botões */
-    }
-
-    .btn-social i { /* Estilos para os ícones sociais */
-        font-size: 1.9rem !important; /* Tamanho do ícone */
-         color: #333 !important; /* Define a cor */
-    }
-
-    .btn-social a { /* Estilos para os links dos botões sociais */
-        color: #333 !important; /* Define a cor */
-    }
-
-    .slider { /* Estilos para o contêiner do slider */
-        width: 95vw !important; /* Largura */
-        max-width: 700px !important; /* Largura máxima */
-        height: 300px !important; /* Altura para tablet */
-        margin: 18px auto 0 auto !important; /* Centraliza e adiciona margem superior */
-        overflow: hidden !important; /* Oculta transbordamento */
-        position: relative !important; /* Posição relativa */
-        background: transparent !important; /* Fundo transparente */
-        border-radius: 18px !important; /* Borda arredondada */
-        box-sizing: border-box !important; /* Inclui padding/border no tamanho */
-    }
-
-    .slider img,
-    .slider .slide { /* Estilos para imagens/slides do slider */
-        width: 100% !important; /* Ocupa 100% da largura do pai */
-        height: 100% !important; /* Ocupa 100% da altura do pai */
-        object-fit: cover !important; /* Cobre o contêiner sem distorcer */
-        display: none !important; /* Esconde por padrão */
-        position: absolute !important; /* Posição absoluta */
-        left: 0 !important; /* Alinha à esquerda */
-        top: 0 !important; /* Alinha ao topo */
-         border-radius: 18px !important; /* Borda arredondada */
-    }
-    .slider .slide.active,
-    .slider img.active { /* Estilos para slide/imagem ativo */
-        display: block !important; /* Exibe o slide ativo */
-        position: relative !important; /* Posição relativa */
-        z-index: 2 !important; /* Garante que fique acima */
-    }
-
-    .products-grid { /* Estilos para o grid de produtos */
-        display: grid !important; /* Usa grid */
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 produtos por linha */
-        gap: 22px !important; /* Espaçamento entre produtos */
-        padding: 18px 1rem !important; /* Padding interno */
-        width: 100% !important; /* Ocupa toda a largura */
-        margin: 0 auto !important; /* Centraliza */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        max-width: 95vw !important; /* Largura máxima */
-    }
-
-    .product { /* Estilos para cada card de produto */
-        padding: 14px 10px !important; /* Padding interno */
-        border-radius: 12px !important; /* Borda arredondada */
-        margin: 0 auto !important; /* Centraliza */
-        text-align: center !important; /* Centraliza texto */
-        width: 100% !important; /* Ocupa toda a largura da coluna do grid */
-        box-sizing: border-box !important; /* Inclui padding/border */
-         min-height: unset !important; /* Remove altura mínima */
-         box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important; /* Sombra */
-    }
-
-    .product-images img.main-img { /* Estilos para imagem principal do produto */
-         display: none !important; /* Oculta não ativos */
-         height: 170px !important; /* Altura da imagem */
-         width: 100% !important; /* Largura da imagem */
-         object-fit: contain !important; /* Redimensiona para caber */
-         margin: 0 auto 8px !important; /* Centraliza e adiciona margem */
-    }
-    .product-images img.main-img.active { /* Exibe imagem ativa */
-        display: block !important; /* Mostra a imagem ativa */
-    }
-
-     .whatsapp-btn { /* Estilos para botão do WhatsApp */
-        font-size: 0.95rem !important; /* Tamanho da fonte */
-        padding: 8px 12px !important; /* Padding interno */
-        border-radius: 18px !important; /* Borda arredondada */
-        margin-top: 10px !important; /* Margem superior */
-        width: auto !important; /* Largura automática */
-        min-width: 120px !important; /* Largura mínima */
-        max-width: 90% !important; /* Largura máxima */
-        display: inline-flex !important; /* Exibe como flex inline */
-        align-items: center !important; /* Centraliza conteúdo verticalmente */
-        gap: 6px !important; /* Espaçamento entre ícone e texto */
-        margin-bottom: 0 !important; /* Remove margem inferior */
-    }
-
-    .whatsapp-btn i { /* Estilos para ícone do WhatsApp */
-        font-size: 1.1rem !important; /* Tamanho do ícone */
-    }
-
-    .quem-somos { /* Estilos para seção "Quem Somos" */
-        margin: 0 auto !important; /* Centraliza */
-        width: 100% !important; /* Ocupa toda largura */
-        max-width: 95vw !important; /* Largura máxima */
-        padding: 18px 1rem !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-    .quem-somos-container { /* Estilos para contêiner interno Quem Somos */
-        width: 100% !important; /* Ocupa toda largura do pai */
-        padding: 12px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        text-align: center !important; /* Centraliza texto */
-        margin: 0 auto !important; /* Centraliza */
-        border-radius: 16px !important; /* Borda arredondada */
-        font-size: 1.05rem !important; /* Tamanho da fonte */
-        line-height: 1.5 !important; /* Altura da linha */
-        word-break: break-word !important; /* Quebra de texto */
-    }
-
-    .pagamento-selos { /* Estilos para seção de Pagamento e Selos */
-        margin: 0 auto !important; /* Centraliza */
-        width: 100% !important; /* Ocupa toda largura */
-        max-width: 95vw !important; /* Largura máxima */
-        padding: 18px 1rem !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-     .container, .row { /* Estilos para contêineres/linhas (Pagamento/Selos) */
-        flex-direction: row !important; /* Manter em linha no tablet */
-        align-items: flex-start !important; /* Alinha itens ao início */
-        gap: 20px !important; /* Espaçamento entre itens */
-        width: 100% !important; /* Ocupa toda largura */
-        margin: 0 auto !important; /* Centraliza */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-    .pagamento, .selos { /* Estilos para blocos de Pagamento e Selos */
-        width: 48% !important; /* Divide a largura (metade para cada) */
-        max-width: unset !important; /* Remove largura máxima */
-        min-width: unset !important; /* Remove largura mínima */
-        margin: 0 auto !important; /* Centraliza */
-        padding: 18px 12px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        border-radius: 14px !important; /* Borda arredondada */
-    }
-
-    footer p { /* Estilos para texto do rodapé */
-        text-align: center !important; /* Centraliza texto */
-        margin: 0 auto !important; /* Centraliza */
-        padding: 20px 0 !important; /* Padding vertical */
-        width: 100% !important; /* Ocupa toda largura */
-    }
-
-} /* Fim das regras para telas de Tablet */
-
-/* Desktop (769px a 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) { /* Início das regras para telas de Desktop */
-     html, body { /* Ajustes gerais */
-        max-width: 100vw; /* Impede rolagem horizontal */
-        overflow-x: hidden; /* Oculta transbordamento horizontal */
-        font-size: 18px; /* Tamanho da fonte base */
-    }
-
-    header { /* Estilos para o cabeçalho */
-        flex-direction: row !important; /* Organiza itens em linha */
-        align-items: center !important; /* Centraliza itens verticalmente */
-        justify-content: space-between !important; /* Espaça itens */
-        gap: 30px !important; /* Espaçamento entre itens */
-        padding: 3rem 3rem !important; /* Padding interno */
-        text-align: left !important; /* Alinha texto à esquerda */
-        width: 100% !important; /* Ocupa toda largura */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-
-    .logo { /* Estilos para o contêiner da logo */
-        gap: 20px !important; /* Espaçamento entre imagem e texto */
-        width: auto !important; /* Largura automática */
-        margin: 0 !important; /* Remove margem */
-        font-size: 2.2rem !important; /* Tamanho da fonte */
-    }
-
-    .logo img { /* Estilos para a imagem da logo */
-        width: 160px !important; /* Largura */
-        height: 160px !important; /* Altura */
-         object-fit: contain !important; /* Redimensiona para caber */
-    }
-
-    .logo a { /* Estilos para o texto da logo */
-         font-size: 2rem !important; /* Tamanho da fonte */
-    }
-
-    .navegação { /* Estilos para a lista de navegação */
-        flex-direction: row !important; /* Organiza itens em linha */
-        align-items: center !important; /* Centraliza itens */
-        gap: 24px !important; /* Espaçamento entre itens */
-        width: auto !important; /* Largura automática */
-    }
-
-    .navegação li { /* Estilos para cada item da lista de navegação */
-        display: inline-block !important; /* Exibe como bloco inline */
-        margin: 0 !important; /* Remove margens */
-    }
-
-    .navegação a { /* Estilos para os links de navegação */
-         font-size: 1.2rem !important; /* Tamanho da fonte */
-    }
-
-    .btn-social { /* Estilos para o contêiner dos botões sociais */
-        gap: 28px !important; /* Espaçamento entre botões */
-         margin-top: 0 !important; /* Remove margem superior */
-    }
-
-    .btn-social i { /* Estilos para os ícones sociais */
-        font-size: 2.1rem !important; /* Tamanho do ícone */
-         color: #333 !important; /* Define a cor */
-    }
-
-    .btn-social a { /* Estilos para os links dos botões sociais */
-        color: #333 !important; /* Define a cor */
-    }
-
-    .slider { /* Estilos para o contêiner do slider */
-        width: 90vw !important; /* Largura */
-        max-width: 900px !important; /* Largura máxima */
-        height: 350px !important; /* Altura para desktop */
-        margin: 24px auto 0 auto !important; /* Centraliza e adiciona margem */
-        overflow: hidden !important; /* Oculta transbordamento */
-        position: relative !important; /* Posição relativa */
-        background: transparent !important; /* Fundo transparente */
-        border-radius: 18px !important; /* Borda arredondada */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-
-    .slider img,
-    .slider .slide { /* Estilos para imagens/slides do slider */
-        width: 100% !important; /* Ocupa 100% da largura do pai */
-        height: 100% !important; /* Ocupa 100% da altura do pai */
-        object-fit: cover !important; /* Cobre o contêiner */
-        display: none !important; /* Esconde por padrão */
-        position: absolute !important; /* Posição absoluta */
-        left: 0 !important; /* Alinha à esquerda */
-        top: 0 !important; /* Alinha ao topo */
-         border-radius: 18px !important; /* Borda arredondada */
-    }
-    .slider .slide.active,
-    .slider img.active { /* Estilos para slide/imagem ativo */
-        display: block !important; /* Exibe o slide ativo */
-        position: relative !important; /* Posição relativa */
-        z-index: 2 !important; /* Garante que fique acima */
-    }
-
-    .products-grid { /* Estilos para o grid de produtos */
-        display: grid !important; /* Usa grid */
-        grid-template-columns: repeat(3, 1fr) !important; /* 3 produtos por linha para desktop */
-        gap: 28px !important; /* Espaçamento entre produtos */
-        padding: 24px 2rem !important; /* Padding interno */
-        width: 100% !important; /* Ocupa toda a largura */
-        margin: 0 auto !important; /* Centraliza */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        max-width: 1100px !important; /* Largura máxima */
-    }
-
-    .product { /* Estilos para cada card de produto */
-        padding: 18px 12px !important; /* Padding interno */
-        border-radius: 14px !important; /* Borda arredondada */
-        margin: 0 auto !important; /* Centraliza */
-        text-align: center !important; /* Centraliza texto */
-        width: 100% !important; /* Ocupa toda a largura da coluna do grid */
-        box-sizing: border-box !important; /* Inclui padding/border */
-         min-height: unset !important; /* Remove altura mínima */
-         box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important; /* Sombra */
-    }
-
-    .product-images img.main-img { /* Estilos para imagem principal do produto */
-         display: none !important; /* Oculta não ativos */
-         height: 200px !important; /* Altura da imagem */
-         width: 100% !important; /* Largura da imagem */
-         object-fit: contain !important; /* Redimensiona para caber */
-         margin: 0 auto 8px !important; /* Centraliza e adiciona margem */
-    }
-    .product-images img.main-img.active { /* Exibe imagem ativa */
-        display: block !important; /* Mostra a imagem ativa */
-    }
-
-    .whatsapp-btn { /* Estilos para botão do WhatsApp */
-        font-size: 0.95rem !important; /* Tamanho da fonte */
-        padding: 8px 12px !important; /* Padding interno */
-        border-radius: 18px !important; /* Borda arredondada */
-        margin-top: 10px !important; /* Margem superior */
-        width: auto !important; /* Largura automática */
-        min-width: 120px !important; /* Largura mínima */
-        max-width: 90% !important; /* Largura máxima */
-        display: inline-flex !important; /* Exibe como flex inline */
-        align-items: center !important; /* Centraliza conteúdo verticalmente */
-        gap: 6px !important; /* Espaçamento entre ícone e texto */
-        margin-bottom: 0 !important; /* Remove margem inferior */
-    }
-
-    .whatsapp-btn i { /* Estilos para ícone do WhatsApp */
-        font-size: 1.1rem !important; /* Tamanho do ícone */
-    }
-
-     .quem-somos { /* Estilos para seção "Quem Somos" */
-        margin: 0 auto !important; /* Centraliza */
-        width: 100% !important; /* Ocupa toda largura */
-        max-width: 95vw !important; /* Largura máxima */
-        padding: 24px 2rem !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-    .quem-somos-container { /* Estilos para contêiner interno Quem Somos */
-        width: 100% !important; /* Ocupa toda largura do pai */
-        padding: 18px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        text-align: center !important; /* Centraliza texto */
-        margin: 0 auto !important; /* Centraliza */
-        border-radius: 16px !important; /* Borda arredondada */
-        font-size: 1.1rem !important; /* Tamanho da fonte */
-        line-height: 1.6 !important; /* Altura da linha */
-        word-break: break-word !important; /* Quebra de texto */
-    }
-
-    .pagamento-selos { /* Estilos para seção de Pagamento e Selos */
-        margin: 0 auto !important; /* Centraliza */
-        width: 100% !important; /* Ocupa toda largura */
-        max-width: 95vw !important; /* Largura máxima */
-        padding: 24px 2rem !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-     .container, .row { /* Estilos para contêineres/linhas (Pagamento/Selos) */
-        flex-direction: row !important; /* Organiza itens em linha */
-        align-items: flex-start !important; /* Alinha itens ao início */
-        gap: 24px !important; /* Espaçamento entre itens */
-        width: 100% !important; /* Ocupa toda largura */
-        margin: 0 auto !important; /* Centraliza */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-    .pagamento, .selos { /* Estilos para blocos de Pagamento e Selos */
-        width: 48% !important; /* Divide a largura */
-        max-width: unset !important; /* Remove largura máxima */
-        min-width: unset !important; /* Remove largura mínima */
-        margin: 0 auto !important; /* Centraliza */
-        padding: 20px 14px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        border-radius: 14px !important; /* Borda arredondada */
-    }
-
-    footer p { /* Estilos para texto do rodapé */
-        text-align: center !important; /* Centraliza texto */
-        margin: 0 auto !important; /* Centraliza */
-        padding: 24px 0 !important; /* Padding vertical */
-        width: 100% !important; /* Ocupa toda largura */
-    }
-
-} /* Fim das regras para telas de Desktop */
-
-/* Large Desktop (acima de 1024px) */
-@media (min-width: 1025px) { /* Início das regras para telas de Large Desktop */
-    html, body { /* Ajustes gerais */
-        max-width: 100vw; /* Impede rolagem horizontal */
-        overflow-x: hidden; /* Oculta transbordamento horizontal */
-        font-size: 20px; /* Tamanho da fonte base */
-    }
-
-    header { /* Estilos para o cabeçalho */
-        flex-direction: row !important; /* Organiza itens em linha */
-        align-items: center !important; /* Centraliza itens verticalmente */
-        justify-content: space-between !important; /* Espaça itens */
-        gap: 40px !important; /* Espaçamento entre itens */
-        padding: 4rem 4rem !important; /* Padding interno */
-        text-align: left !important; /* Alinha texto à esquerda */
-        width: 100% !important; /* Ocupa toda largura */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-
-    .logo { /* Estilos para o contêiner da logo */
-        gap: 24px !important; /* Espaçamento entre imagem e texto */
-        width: auto !important; /* Largura automática */
-        margin: 0 !important; /* Remove margem */
-        font-size: 2.8rem !important; /* Tamanho da fonte */
-    }
-
-    .logo img { /* Estilos para a imagem da logo */
-        width: 180px !important; /* Largura */
-        height: 180px !important; /* Altura */
-         object-fit: contain !important; /* Redimensiona para caber */
-    }
-
-    .logo a { /* Estilos para o texto da logo */
-         font-size: 2.5rem !important; /* Tamanho da fonte */
-    }
-
-    .navegação { /* Estilos para a lista de navegação */
-        flex-direction: row !important; /* Organiza itens em linha */
-        align-items: center !important; /* Centraliza itens */
-        gap: 28px !important; /* Espaçamento entre itens */
-        width: auto !important; /* Largura automática */
-    }
-
-    .navegação li { /* Estilos para cada item da lista de navegação */
-        display: inline-block !important; /* Exibe como bloco inline */
-        margin: 0 !important; /* Remove margens */
-    }
-
-    .navegação a { /* Estilos para os links de navegação */
-         font-size: 1.3rem !important; /* Tamanho da fonte */
-    }
-
-    .btn-social { /* Estilos para o contêiner dos botões sociais */
-        gap: 32px !important; /* Espaçamento entre botões */
-         margin-top: 0 !important; /* Remove margem superior */
-    }
-
-    .btn-social i { /* Estilos para os ícones sociais */
-        font-size: 2.4rem !important; /* Tamanho do ícone */
-         color: #333 !important; /* Define a cor */
-    }
-
-     .btn-social a { /* Estilos para os links dos botões sociais */
-        color: #333 !important; /* Define a cor */
-    }
-
-    .slider { /* Estilos para o contêiner do slider */
-        width: 80vw !important; /* Largura */
-        max-width: 1000px !important; /* Largura máxima */
-        height: 400px !important; /* Altura para large desktop */
-        margin: 32px auto 0 auto !important; /* Centraliza e adiciona margem */
-        overflow: hidden !important; /* Oculta transbordamento */
-        position: relative !important; /* Posição relativa */
-        background: transparent !important; /* Fundo transparente */
-        border-radius: 18px !important; /* Borda arredondada */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-
-    .slider img,
-    .slider .slide { /* Estilos para imagens/slides do slider */
-        width: 100% !important; /* Ocupa 100% da largura do pai */
-        height: 100% !important; /* Ocupa 100% da altura do pai */
-        object-fit: cover !important; /* Cobre o contêiner */
-        display: none !important; /* Esconde por padrão */
-        position: absolute !important; /* Posição absoluta */
-        left: 0 !important; /* Alinha à esquerda */
-        top: 0 !important; /* Alinha ao topo */
-         border-radius: 18px !important; /* Borda arredondada */
-    }
-    .slider .slide.active,
-    .slider img.active { /* Estilos para slide/imagem ativo */
-        display: block !important; /* Exibe o slide ativo */
-        position: relative !important; /* Posição relativa */
-        z-index: 2 !important; /* Garante que fique acima */
-    }
-
-    .products-grid { /* Estilos para o grid de produtos */
-        display: grid !important; /* Usa grid */
-        grid-template-columns: repeat(3, 1fr) !important; /* 3 produtos por linha para large desktop */
-        gap: 32px !important; /* Espaçamento entre produtos */
-        padding: 30px 3rem !important; /* Padding interno */
-        width: 100% !important; /* Ocupa toda a largura */
-        margin: 0 auto !important; /* Centraliza */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        max-width: 1200px !important; /* Largura máxima */
-    }
-
-    .product { /* Estilos para cada card de produto */
-        padding: 22px 14px !important; /* Padding interno */
-        border-radius: 16px !important; /* Borda arredondada */
-        margin: 0 auto !important; /* Centraliza */
-        text-align: center !important; /* Centraliza texto */
-        width: 100% !important; /* Ocupa toda a largura da coluna do grid */
-        box-sizing: border-box !important; /* Inclui padding/border */
-         min-height: unset !important; /* Remove altura mínima */
-         box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important; /* Sombra */
-    }
-
-    .product-images img.main-img { /* Estilos para imagem principal do produto */
-         display: none !important; /* Oculta não ativos */
-         height: 250px !important; /* Altura da imagem */
-         width: 100% !important; /* Largura da imagem */
-         object-fit: contain !important; /* Redimensiona para caber */
-         margin: 0 auto 8px !important; /* Centraliza e adiciona margem */
-    }
-    .product-images img.main-img.active { /* Exibe imagem ativa */
-        display: block !important; /* Mostra a imagem ativa */
-    }
-
-    .whatsapp-btn { /* Estilos para botão do WhatsApp */
-        font-size: 1rem !important; /* Tamanho da fonte */
-        padding: 10px 14px !important; /* Padding interno */
-        border-radius: 20px !important; /* Borda arredondada */
-        margin-top: 12px !important; /* Margem superior */
-        width: auto !important; /* Largura automática */
-        min-width: 130px !important; /* Largura mínima */
-        max-width: 90% !important; /* Largura máxima */
-        display: inline-flex !important; /* Exibe como flex inline */
-        align-items: center !important; /* Centraliza conteúdo verticalmente */
-        gap: 8px !important; /* Espaçamento entre ícone e texto */
-        margin-bottom: 0 !important; /* Remove margem inferior */
-    }
-
-     .whatsapp-btn i { /* Estilos para ícone do WhatsApp */
-        font-size: 1.2rem !important; /* Tamanho do ícone */
-    }
-
-    .quem-somos { /* Estilos para seção "Quem Somos" */
-        margin: 0 auto !important; /* Centraliza */
-        width: 100% !important; /* Ocupa toda largura */
-        max-width: 90vw !important; /* Largura máxima */
-        padding: 30px 3rem !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-    .quem-somos-container { /* Estilos para contêiner interno Quem Somos */
-        width: 100% !important; /* Ocupa toda largura do pai */
-        padding: 20px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        text-align: center !important; /* Centraliza texto */
-        margin: 0 auto !important; /* Centraliza */
-        border-radius: 16px !important; /* Borda arredondada */
-        font-size: 1.2rem !important; /* Tamanho da fonte */
-        line-height: 1.6 !important; /* Altura da linha */
-        word-break: break-word !important; /* Quebra de texto */
-    }
-
-    .pagamento-selos { /* Estilos para seção de Pagamento e Selos */
-        margin: 0 auto !important; /* Centraliza */
-        width: 100% !important; /* Ocupa toda largura */
-        max-width: 90vw !important; /* Largura máxima */
-        padding: 30px 3rem !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-     .container, .row { /* Estilos para contêineres/linhas (Pagamento/Selos) */
-        flex-direction: row !important; /* Organiza itens em linha */
-        align-items: flex-start !important; /* Alinha itens ao início */
-        gap: 30px !important; /* Espaçamento entre itens */
-        width: 100% !important; /* Ocupa toda largura */
-        margin: 0 auto !important; /* Centraliza */
-        box-sizing: border-box !important; /* Inclui padding/border */
-    }
-    .pagamento, .selos { /* Estilos para blocos de Pagamento e Selos */
-        width: 48% !important; /* Divide a largura */
-        max-width: unset !important; /* Remove largura máxima */
-        min-width: unset !important; /* Remove largura mínima */
-        margin: 0 auto !important; /* Centraliza */
-        padding: 20px 14px !important; /* Padding interno */
-        box-sizing: border-box !important; /* Inclui padding/border */
-        border-radius: 14px !important; /* Borda arredondada */
-    }
-
-    footer p { /* Estilos para texto do rodapé */
-        text-align: center !important; /* Centraliza texto */
-        margin: 0 auto !important; /* Centraliza */
-        padding: 30px 0 !important; /* Padding vertical */
-        width: 100% !important; /* Ocupa toda largura */
-    }
-
-} /* Fim das regras para telas de Large Desktop */
-
-/* Ajustes extras para responsividade e usabilidade */
-
-/* Botões de navegação das fotos dos produtos */
-.product-images .nav-btn { /* Estilos para os botões de navegação de imagem do produto */
-    display: flex !important; /* Usa flexbox */
-    align-items: center; /* Centraliza conteúdo verticalmente */
-    justify-content: center; /* Centraliza conteúdo horizontalmente */
-    position: absolute; /* Posição absoluta */
-    top: 50%; /* Alinha ao centro verticalmente */
-    transform: translateY(-50%); /* Ajusta para o centro exato */
-    background: rgba(255,255,255,0.8); /* Fundo branco semi-transparente */
-    border: none; /* Remove borda */
-    width: 32px; /* Largura do botão */
-    height: 32px; /* Altura do botão */
-    border-radius: 50%; /* Forma circular */
-    cursor: pointer; /* Cursor de mão */
-    z-index: 3; /* Garante que fique acima das imagens */
-    font-size: 18px; /* Tamanho do ícone */
-    color: #333; /* Cor do ícone */
-    transition: background 0.2s; /* Transição suave de fundo */
-}
-.product-images .nav-btn:hover { /* Estilos para os botões de navegação de imagem do produto ao passar o mouse */
-    background: #FF7043; /* Muda cor de fundo para laranja */
-    color: #fff; /* Muda cor do ícone para branco */
-}
-.product-images .prev-btn { left: 8px; } /* Posiciona botão anterior à esquerda */
-.product-images .next-btn { right: 8px; } /* Posiciona botão próximo à direita */
-
-/* Botão do WhatsApp menor */
-.whatsapp-btn { /* Estilos para o botão do WhatsApp */
-    font-size: 0.95rem !important; /* Tamanho da fonte */
-    padding: 8px 12px !important; /* Padding interno */
-    border-radius: 18px !important; /* Borda arredondada */
-    margin-top: 10px !important; /* Margem superior */
-    width: auto !important; /* Largura automática */
-    min-width: 120px !important; /* Largura mínima */
-    max-width: 90% !important; /* Largura máxima (para não ocupar 100% em telas maiores) */
-    display: inline-flex !important; /* Exibe como flex inline */
-    align-items: center !important; /* Centraliza conteúdo verticalmente */
-    gap: 6px !important; /* Espaçamento entre ícone e texto */
-    margin-bottom: 0 !important; /* Remove margem inferior */
-}
-.whatsapp-btn i { /* Estilos para o ícone do WhatsApp */
-    font-size: 1.1rem !important; /* Tamanho do ícone */
 }
 
-/* Ajuste dos containers para não causar rolagem horizontal */
-.quem-somos,
-.quem-somos-container,
-.pagamento-selos,
-.pagamento,
-.selos { /* Estilos gerais para as seções Quem Somos, Pagamento e Selos */
-    width: 100% !important; /* Ocupa toda a largura */
-    max-width: 100vw !important; /* Garante que não ultrapasse a largura da viewport */
-    margin-left: 0 !important; /* Remove margem esquerda */
-    margin-right: 0 !important; /* Remove margem direita */
-    box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-    padding-left: 0 !important; /* Remove padding esquerdo (ajustado nos internos) */
-    padding-right: 0 !important; /* Remove padding direito (ajustado nos internos) */
+/* Tablet (481px - 768px) - Ajustes para telas médias */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Grid de produtos em duas colunas para tablet */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Slider ajustado para tablet */
+    .slider {
+        height: 40vw;
+        min-height: 200px;
+        max-height: 300px;
+    }
+
+    /* Imagens do produto ajustadas para tablet */
+    .product-images img.main-img {
+        height: 220px;
+    }
 }
-.container, .row { /* Estilos para contêineres genéricos e linhas (usados em pagamento/selos) */
-    flex-direction: column !important; /* Organiza itens em coluna (no mobile, sobreposto nas media queries maiores) */
-    align-items: center !important; /* Centraliza itens */
-    gap: 10px !important; /* Espaçamento entre itens */
-    width: 100% !important; /* Ocupa toda a largura */
-    margin: 0 !important; /* Remove margens */
-    box-sizing: border-box !important; /* Inclui padding e border no tamanho total */
-} /* Fim dos ajustes extras */
+
+/* Desktop (769px - 1024px) - Ajustes para telas grandes */
+@media (min-width: 769px) {
+    /* Grid de produtos em três colunas para desktop */
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Slider ajustado para desktop */
+    .slider {
+        height: 35vw;
+        min-height: 300px;
+        max-height: 400px;
+    }
+
+    /* Imagens do produto ajustadas para desktop */
+    .product-images img.main-img {
+        height: 250px;
+    }
+}
+
+/* Large Desktop (1025px+) - Ajustes para telas muito grandes */
+@media (min-width: 1025px) {
+    /* Grid de produtos em quatro colunas para telas grandes */
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Slider ajustado para telas grandes */
+    .slider {
+        height: 30vw;
+        min-height: 400px;
+        max-height: 500px;
+    }
+
+    /* Imagens do produto ajustadas para telas grandes */
+    .product-images img.main-img {
+        height: 280px;
+    }
+}
+
+/* Navegação de imagens do produto - Estilos comuns para todos os breakpoints */
+.product-images .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efeito hover nos botões de navegação */
+.product-images .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Posicionamento dos botões de navegação */
+.product-images .prev-btn { left: 8px; }
+.product-images .next-btn { right: 8px; } 
