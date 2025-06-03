@@ -82,9 +82,7 @@ function contactWhatsApp(img, desc) {
   const encodedMessage = encodeURIComponent(message);
   
   // Gera o link do WhatsApp com o número e a mensagem
-  // Removendo qualquer caractere não numérico do número de telefone
-  const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${cleanPhoneNumber}&text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/message/7XS7DGTNCKBWG1?text=${encodedMessage}`;
   
   // Abre o link em uma nova aba
   window.open(whatsappUrl, '_blank');
